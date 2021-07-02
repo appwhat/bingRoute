@@ -1,10 +1,11 @@
 var map, infobox, dataLayer, directionsManager;
 
 //Query URL to the Fourth Coffe Shop data source
-//var sdsDataSourceUrl = 'http://spatial.virtualearth.net/REST/v1/data/20181f26d9e94c81acdf9496133d4f23/FourthCoffeeSample/FourthCoffeeShops';
+var sdsDataSourceUrl = 'http://spatial.virtualearth.net/REST/v1/data/20181f26d9e94c81acdf9496133d4f23/FourthCoffeeSample/FourthCoffeeShops';
 
 function GetMap() {
     map = new Microsoft.Maps.Map('#myMap', {});
+
 
 
     //Create a layer for rendering the data that is along a route.
@@ -19,7 +20,7 @@ function GetMap() {
     //Create an infobox at the center of the map but don't show it.
     infobox = new Microsoft.Maps.Infobox(map.getCenter(), {
         visible: false,
-        title: '',
+        title: 'Carrefour',
         description: ''
     });
 
