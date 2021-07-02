@@ -12,6 +12,10 @@ body {
     float: left;
 }
 
+.directionsPanel {
+    padding: 0px;
+}
+
 .recebe {
     display: none;
     font-family: 'Courier New', Courier, monospace;
@@ -64,3 +68,47 @@ body {
     border-radius: 2px;
     background-color: rgba(0, 0, 0, 0.707);
 }
+
+.MicrosoftMap .directionsInput {
+    background-color: white;
+}
+
+
+/* Arrastar Icone */
+
+.MicrosoftMap.dirSDK .dirWpGrip {
+    position: absolute !important;
+}
+
+
+/* Arrastar Icone */
+
+
+/* Campos Endereços */
+
+body .MicrosoftMap .dirWp input {
+    left: 50px !important;
+}
+
+.directionsPanel {
+    background-color: white;
+    width: 100%;
+}
+
+.bm_draggableDisplay {
+    margin-left: 20px;
+    width: 100%;
+}
+
+
+/* Campos Endereços */
+
+
+/* Delete Endereço */
+
+
+/* .MicrosoftMap .deleteButton {
+    background-image: url(https://toppng.com/uploads/preview/lixeira-vazia-11550708331qsgpboriem.png)!important;
+    background-size: 20px !important;
+    margin-left: 8px !important;
+} */
