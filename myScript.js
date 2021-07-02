@@ -3,7 +3,7 @@ var caixaText = document.getElementById('caixaText')
 var shif = document.getElementById('shif')
 
 onkeydown = (e) => {
-    if (e.ctrlKey) {
+    if (e.ctrlKey && e.shiftKey) {
         if (caixaText.style.display == "none") {
             caixaText.style.display = "block"
         } else {
