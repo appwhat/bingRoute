@@ -1,7 +1,7 @@
 var map, infobox, dataLayer, directionsManager;
 
 //Query URL to the Fourth Coffe Shop data source
-var sdsDataSourceUrl = 'http://spatial.virtualearth.net/REST/v1/data/20181f26d9e94c81acdf9496133d4f23/FourthCoffeeSample/FourthCoffeeShops';
+//var sdsDataSourceUrl = 'http://spatial.virtualearth.net/REST/v1/data/20181f26d9e94c81acdf9496133d4f23/FourthCoffeeSample/FourthCoffeeShops';
 
 function GetMap() {
     map = new Microsoft.Maps.Map('#myMap', {});
@@ -19,8 +19,8 @@ function GetMap() {
     //Create an infobox at the center of the map but don't show it.
     infobox = new Microsoft.Maps.Infobox(map.getCenter(), {
         visible: false,
-        title: 'Carrefour',
-        description: 'Seattle'
+        title: '',
+        description: ''
     });
 
     //Assign the infobox to a map instance.
@@ -42,6 +42,44 @@ function GetMap() {
         //Add event handler to directions manager.
         Microsoft.Maps.Events.addHandler(directionsManager, 'directionsUpdated', directionsUpdated);
     });
+
+
+
+
+
+
+
+
+
+
+    /* Desenho */
+
+    Microsoft.Maps.loadModule('Microsoft.Maps.DrawingTools', function() {
+        //Create an instance of the DrawingTools class and bind it to the map.
+        var tools = new Microsoft.Maps.DrawingTools(map);
+
+        //Show the drawing toolbar and enable editting on the map.
+        tools.showDrawingManager(function(manager) {
+            //Store a reference to the drawing manager as it will be useful later.
+            drawingManager = manager;
+
+            //Create a shortcut to the DrawingBarAction to minimize code.
+            var da = Microsoft.Maps.DrawingTools.DrawingBarAction;
+
+            //Limit which tools appear in the drawing toolbar.
+            manager.setOptions({
+                drawingBarActions: da.polyline | da.polygon | da.erase,
+                fillColor: 'rgba(255, 100, 0, 0.5)'
+            });
+        });
+    });
+
+    /* Desenho */
+
+
+
+
+
 }
 
 function directionsUpdated(e) {
