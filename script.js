@@ -1,11 +1,31 @@
 var map, infobox, dataLayer, directionsManager;
 
-//Query URL to the Fourth Coffe Shop data source
-/* var sdsDataSourceUrl = 'http://spatial.virtualearth.net/REST/v1/data/20181f26d9e94c81acdf9496133d4f23/FourthCoffeeSample/FourthCoffeeShops'; */
+
+var sdsDataSourceUrl = 'http://spatial.virtualearth.net/REST/v1/data/20181f26d9e94c81acdf9496133d4f23/FourthCoffeeSample/FourthCoffeeShops';
 
 function GetMap() {
-    map = new Microsoft.Maps.Map('#myMap', {});
+    map = new Microsoft.Maps.Map('#myMap', {
+        center: new Microsoft.Maps.Location(-23.58686, -46.72520),
+        zoom: 11
+    });
+    var center = map.getCenter();
 
+
+    var pin = new Microsoft.Maps.Pushpin(center, {
+        icon: 'https://static0.tiendeo.com.br/upload_negocio/negocio_21/logo2.png',
+        anchor: new Microsoft.Maps.Point(30, 40)
+    });
+
+    map.entities.push(pin);
+
+    var diego = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.6039345, -46.8183921), { color: 'red' });
+    var leandro = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.6962183, -46.8001089), { color: 'lime' });
+    var waltecir = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.7934763, -46.7358249), { color: 'green' });
+    var katia = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.6238028, -46.5201495), { color: 'violet' });
+    map.entities.push(diego);
+    map.entities.push(leandro);
+    map.entities.push(waltecir);
+    map.entities.push(katia);
 
     //Create a layer for rendering the data that is along a route.
     dataLayer = new Microsoft.Maps.Layer();
@@ -16,15 +36,16 @@ function GetMap() {
     //Add click event to shapes in the data layer.
     Microsoft.Maps.Events.addHandler(dataLayer, 'click', shapeClicked);
 
+
     //Create an infobox at the center of the map but don't show it.
-    /* infobox = new Microsoft.Maps.Infobox(map.getCenter(), {
+    infobox = new Microsoft.Maps.Infobox(map.getCenter(), {
         visible: true,
-        title: 'Carrefour',
-        description: ''
-    }); */
+        title: `Sam's Culub Morumbi`,
+        description: 'Raio de 10km'
+    });
 
     //Assign the infobox to a map instance.
-    //infobox.setMap(map);
+    infobox.setMap(map);
 
     //Load the directions and spatial data service modules.
     Microsoft.Maps.loadModule(['Microsoft.Maps.Directions', 'Microsoft.Maps.SpatialDataService'], function() {
@@ -102,7 +123,7 @@ function directionsUpdated(e) {
 
     //Create a query to get nearby data.
     var queryOptions = {
-        /* queryUrl: sdsDataSourceUrl, */
+        queryUrl: sdsDataSourceUrl,
         spatialFilter: {
             spatialFilterType: 'nearRoute',
             start: currentRoute.routeLegs[0].startWaypointLocation,
