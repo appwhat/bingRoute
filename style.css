@@ -77,8 +77,9 @@ body {
 /* Arrastar Icone */
 
 .MicrosoftMap.dirSDK .dirWpGrip {
-    position: absolute !important;
-}
+    position: relative !important;
+    top: 33px;
+    left: 2px;
 
 
 /* Arrastar Icone */
