@@ -8,6 +8,8 @@ function GetMap() {
         center: new Microsoft.Maps.Location(-23.58686, -46.72520),
         zoom: 11
     });
+
+
     var center = map.getCenter();
 
 
@@ -39,7 +41,7 @@ function GetMap() {
 
     //Create an infobox at the center of the map but don't show it.
     infobox = new Microsoft.Maps.Infobox(map.getCenter(), {
-        visible: true,
+        visible: false,
         title: `Sam's Culub Morumbi`,
         description: 'Raio de 10km'
     });
