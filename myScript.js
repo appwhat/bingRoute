@@ -21,7 +21,7 @@ shif.onclick = () => {
 
     for (let i = 0; i < 20; i++) {
 
-        let valor = `São Paulo, ${caixaText.value.split('\n')[i]}, Brasil`
+        let valor = `${caixaText.value.split('\n')[i]}`
 
         campos[i + 20].value = valor.trim()
 
