@@ -23,15 +23,17 @@
 
     <div class="shif">
         <div>
-            <i style="color: red;" id="btnDeletar" title="Limpar Campos" class="fas fa-trash"></i>
-            <i style="color: rgb(0, 160, 165);" id="btnOk" title="Roteirizar" class="fas fa-align-center"></i>
-            <i style="color: rgb(63, 63, 63);" id="btnMostrar" title="Roteirizar" class="fas fa-vector-square"></i>
+            <i id="btnDeletar" title="Limpar Campos" class="fas fa-trash icon"></i>
+            <i id="btnOk" title="Roteirizar" class="fas fa-align-center icon"></i>
+            <i id="btnMostrar" title="Roteirizar" class="fas fa-vector-square icon"></i>
         </div>
         <i class="fas fa-grip-lines-vertical"></i>
         <div>
-            <i class="fas fa-globe-europe" style="color: rgb(13, 92, 20);" onclick="map.setView({mapTypeId:Microsoft.Maps.MapTypeId.aerial});"> </i>
-            <i class="fas fa-adjust" onclick="map.setView({mapTypeId:Microsoft.Maps.MapTypeId.canvasDark});"> </i>
-            <i class="fas fa-moon" onclick="map.setView({mapTypeId:Microsoft.Maps.MapTypeId.canvasLight});"> </i>
+            <i class="fas fa-globe-europe icon" onclick="map.setView({mapTypeId:Microsoft.Maps.MapTypeId.aerial});"> </i>
+            <i class="fas fa-adjust icon" onclick="map.setView({mapTypeId:Microsoft.Maps.MapTypeId.canvasDark});"> </i>
+            <i class="fas fa-moon icon" onclick="map.setView({mapTypeId:Microsoft.Maps.MapTypeId.canvasLight});"> </i>
+            <i class="fas fa-plus icon" id="btnInserir"> </i>
+
         </div>
     </div>
     <script src="script.js"></script>
