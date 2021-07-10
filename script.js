@@ -19,10 +19,11 @@ function GetMap() {
 
     map.entities.push(pin);
 
-    var diego = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.6039345, -46.8183921), { icon: '/motors/diego.png', title: 'Diego 16km' });
-    var leandro = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.6962183, -46.8001089), { icon: '/motors/leandro.png', title: 'Leandro 18km' });
-    var waltecir = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.7934763, -46.7358249), { icon: '/motors/waltecir.png', title: 'Waltecir 33km' });
-    var katia = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.6238028, -46.5201495), { icon: '/motors/katia.png', title: 'Katia 28km' });
+    
+    var diego = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.6039345, -46.8183921), { icon: 'https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/diego.png', title: 'Diego 16km' });
+    var leandro = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.6962183, -46.8001089), { icon: 'https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/leandro.png', title: 'Leandro 18km' });
+    var waltecir = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.7934763, -46.7358249), { icon: 'https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/waltecir.png', title: 'Waltecir 33km' });
+    var katia = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.6238028, -46.5201495), { icon: 'https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/katia.png', title: 'Katia 28km' });
     map.entities.push(diego);
     map.entities.push(leandro);
     map.entities.push(waltecir);
