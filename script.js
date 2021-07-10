@@ -12,7 +12,6 @@ function GetMap() {
 
     var center = map.getCenter();
 
-
     var pin = new Microsoft.Maps.Pushpin(center, {
         icon: 'https://static0.tiendeo.com.br/upload_negocio/negocio_21/logo2.png',
         anchor: new Microsoft.Maps.Point(30, 40)
@@ -20,10 +19,10 @@ function GetMap() {
 
     map.entities.push(pin);
 
-    var diego = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.6039345, -46.8183921), { color: 'red' });
-    var leandro = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.6962183, -46.8001089), { color: 'lime' });
-    var waltecir = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.7934763, -46.7358249), { color: 'green' });
-    var katia = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.6238028, -46.5201495), { color: 'violet' });
+    var diego = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.6039345, -46.8183921), { icon: '/motors/diego.png', title: 'Diego 16km' });
+    var leandro = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.6962183, -46.8001089), { icon: '/motors/leandro.png', title: 'Leandro 18km' });
+    var waltecir = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.7934763, -46.7358249), { icon: '/motors/waltecir.png', title: 'Waltecir 33km' });
+    var katia = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.6238028, -46.5201495), { icon: '/motors/katia.png', title: 'Katia 28km' });
     map.entities.push(diego);
     map.entities.push(leandro);
     map.entities.push(waltecir);
@@ -88,20 +87,6 @@ function GetMap() {
             Microsoft.Maps.Events.addHandler(manager, 'drawingStarted', function() { highlight('drawingStarted'); });
         })
     });
-
-    function highlight(id) {
-        //Highlight the mouse event div to indicate that the event has fired.
-
-        //Remove the highlighting after a second.
-
-    }
-
-    /* Desenho */
-
-
-
-
-
 }
 
 function directionsUpdated(e) {
@@ -165,6 +150,7 @@ function getRouteOptimization(routeRequest) {
     }
 }
 
+
 function shapeClicked(e) {
     alert()
         //Make sure the infobox has metadata to display.
@@ -176,5 +162,71 @@ function shapeClicked(e) {
             description: 'Store Type: ' + e.primitive.metadata.StoreType,
             visible: true
         });
+    }
+}
+
+
+
+var btnInserir = document.getElementById('btnInserir')
+var address = { address: " " }
+
+btnInserir.onclick = () => {
+    var waypoint1 = new Microsoft.Maps.Directions.Waypoint(address),
+        waypoint2 = new Microsoft.Maps.Directions.Waypoint(address),
+        waypoint3 = new Microsoft.Maps.Directions.Waypoint(address),
+        waypoint4 = new Microsoft.Maps.Directions.Waypoint(address),
+        waypoint5 = new Microsoft.Maps.Directions.Waypoint(address);
+    directionsManager.addWaypoint(waypoint1)
+    directionsManager.addWaypoint(waypoint2);
+    directionsManager.addWaypoint(waypoint3);
+    directionsManager.addWaypoint(waypoint4);
+    directionsManager.addWaypoint(waypoint5);
+    /* Adicionando Campos */
+    /*   directionsManager.routeCleared() */
+    console.log(directionsManager._directionsTask.inputData.waypoints.length);
+
+}
+
+/* Não é Mapa */
+
+var caixaText = document.getElementById('caixaText')
+var campos = document.getElementsByTagName('input')
+
+var btnDeletar = document.getElementById('btnDeletar')
+var btnOk = document.getElementById('btnOk')
+var btnMostrar = document.getElementById('btnMostrar')
+
+function mostarOcultar() {
+    if (caixaText.style.display == "none") {
+        caixaText.style.display = "block"
+    } else {
+        caixaText.style.display = "none"
+    }
+}
+
+function limparCampos() {
+    for (let i = 0; i < 30; i++) {
+        campos[i + 20].value = ""
+    }
+
+}
+
+
+onkeydown = (e) => {
+    if (e.ctrlKey && e.shiftKey) { mostarOcultar() }
+    if (e.ctrlKey && e.code == 'Delete') { limparCampos() }
+}
+
+
+
+btnMostrar.onclick = () => { mostarOcultar() }
+btnDeletar.onclick = () => { limparCampos() }
+
+btnOk.onclick = () => {
+    document.getElementsByTagName('input')[19].value = 'Avenida Professor Francisco Morato 2585, São Paulo, 05513-300, Brasil' /* Depois irei usar o Select */
+
+    for (let i = 0; i < 30; i++) {
+        let valor = `${caixaText.value.split('\n')[i]}`
+        campos[i + 20].value = valor.trim()
     }
 }
