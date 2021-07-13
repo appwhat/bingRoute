@@ -6,11 +6,23 @@ var sdsDataSourceUrl = 'http://spatial.virtualearth.net/REST/v1/data/20181f26d9e
 function GetMap() {
     map = new Microsoft.Maps.Map('#myMap', {
         center: new Microsoft.Maps.Location(-23.58686, -46.72520),
-        zoom: 11
+        zoom: 12,
+        /* mapTypeId: Microsoft.Maps.MapTypeId.canvasDark, */
+    });
+
+    var center = map.getCenter();
+
+
+    Microsoft.Maps.loadModule('Microsoft.Maps.SpatialMath', function() {
+        // Get locations of a regular hexagon, 5 miles from each vertex the map center
+        var locations = Microsoft.Maps.SpatialMath.getRegularPolygon(center, 10, 100, Microsoft.Maps.SpatialMath.DistanceUnits.Miles);
+        var zona = new Microsoft.Maps.Polygon(locations, { fillColor: 'rgba(255,10,10 , 0.05)', strokeColor: 'rgba(255,10,10 , 0.05)' });
+        map.entities.push(zona);
+
     });
 
 
-    var center = map.getCenter();
+
 
     var pin = new Microsoft.Maps.Pushpin(center, {
         icon: 'https://static0.tiendeo.com.br/upload_negocio/negocio_21/logo2.png',
@@ -19,11 +31,10 @@ function GetMap() {
 
     map.entities.push(pin);
 
-    
-    var diego = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.6039345, -46.8183921), { icon: 'https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/diego.png', title: 'Diego 16km' });
-    var leandro = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.6962183, -46.8001089), { icon: 'https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/leandro.png', title: 'Leandro 18km' });
-    var waltecir = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.7934763, -46.7358249), { icon: 'https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/waltecir.png', title: 'Waltecir 33km' });
-    var katia = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.6238028, -46.5201495), { icon: 'https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/katia.png', title: 'Katia 28km' });
+    var diego = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.6039345, -46.8183921), { icon: '/motors/diego.png', title: 'Diego 16km' });
+    var leandro = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.6962183, -46.8001089), { icon: '/motors/leandro.png', title: 'Leandro 18km' });
+    var waltecir = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.7934763, -46.7358249), { icon: '/motors/waltecir.png', title: 'Waltecir 33km' });
+    var katia = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.6238028, -46.5201495), { icon: '/motors/katia.png', title: 'Katia 28km' });
     map.entities.push(diego);
     map.entities.push(leandro);
     map.entities.push(waltecir);
@@ -68,10 +79,6 @@ function GetMap() {
 
 
 
-
-
-    /* Desenho */
-
     Microsoft.Maps.loadModule('Microsoft.Maps.DrawingTools', function() {
         //Create an instance of the DrawingTools class and bind it to the map.
         var tools = new Microsoft.Maps.DrawingTools(map);
@@ -80,12 +87,9 @@ function GetMap() {
         tools.showDrawingManager(function(manager) {
 
             //Add events to the drawing manager.
-            Microsoft.Maps.Events.addHandler(manager, 'drawingChanged', function() { highlight('drawingChanged'); });
-            Microsoft.Maps.Events.addHandler(manager, 'drawingChanging', function() { highlight('drawingChanging'); });
-            Microsoft.Maps.Events.addHandler(manager, 'drawingEnded', function() { highlight('drawingEnded'); });
-            Microsoft.Maps.Events.addHandler(manager, 'drawingErased', function() { highlight('drawingErased'); });
-            Microsoft.Maps.Events.addHandler(manager, 'drawingModeChanged', function() { highlight('drawingModeChanged'); });
-            Microsoft.Maps.Events.addHandler(manager, 'drawingStarted', function() { highlight('drawingStarted'); });
+            Microsoft.Maps.Events.addHandler(manager, 'drawingStarted', function() {
+                /* Desenhe algo */
+            });
         })
     });
 }
