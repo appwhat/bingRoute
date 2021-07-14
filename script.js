@@ -15,11 +15,13 @@ function GetMap() {
 
     Microsoft.Maps.loadModule('Microsoft.Maps.SpatialMath', function() {
         // Get locations of a regular hexagon, 5 miles from each vertex the map center
-        var locations = Microsoft.Maps.SpatialMath.getRegularPolygon(center, 10, 100, Microsoft.Maps.SpatialMath.DistanceUnits.Miles);
-        var zona = new Microsoft.Maps.Polygon(locations, { fillColor: 'rgba(255,10,10 , 0.05)', strokeColor: 'rgba(255,10,10 , 0.05)' });
+        var locations = Microsoft.Maps.SpatialMath.getRegularPolygon(center, 4.1, 100, Microsoft.Maps.SpatialMath.DistanceUnits.Miles);
+        var zona = new Microsoft.Maps.Polygon(locations, { fillColor: 'rgba(255,10,10 , 0.00)', strokeColor: 'rgba(200,0,10 , 0.5)' });
         map.entities.push(zona);
 
     });
+
+
 
 
 
@@ -175,7 +177,8 @@ function shapeClicked(e) {
 var btnInserir = document.getElementById('btnInserir')
 var address = { address: " " }
 
-btnInserir.onclick = () => {
+function adionar5() {
+
     var waypoint1 = new Microsoft.Maps.Directions.Waypoint(address),
         waypoint2 = new Microsoft.Maps.Directions.Waypoint(address),
         waypoint3 = new Microsoft.Maps.Directions.Waypoint(address),
@@ -186,11 +189,14 @@ btnInserir.onclick = () => {
     directionsManager.addWaypoint(waypoint3);
     directionsManager.addWaypoint(waypoint4);
     directionsManager.addWaypoint(waypoint5);
-    /* Adicionando Campos */
-    /*   directionsManager.routeCleared() */
-    console.log(directionsManager._directionsTask.inputData.waypoints.length);
 
 }
+
+btnInserir.onclick = () => {
+    adionar5()
+}
+
+
 
 /* Não é Mapa */
 
@@ -218,8 +224,9 @@ function limparCampos() {
 
 
 onkeydown = (e) => {
-    if (e.ctrlKey && e.shiftKey) { mostarOcultar() }
+    if (e.shiftKey && e.code == 'Enter') { mostarOcultar() }
     if (e.ctrlKey && e.code == 'Delete') { limparCampos() }
+    if (e.ctrlKey && e.code == 'Enter') { adionar5() }
 }
 
 
@@ -227,11 +234,18 @@ onkeydown = (e) => {
 btnMostrar.onclick = () => { mostarOcultar() }
 btnDeletar.onclick = () => { limparCampos() }
 
-btnOk.onclick = () => {
-    document.getElementsByTagName('input')[19].value = 'Avenida Professor Francisco Morato 2585, São Paulo, 05513-300, Brasil' /* Depois irei usar o Select */
+var selecione = document.getElementById('selecione')
 
+selecione.onchange = () => {
+    document.getElementsByTagName('input')[19].value = selecione.value
+    document.getElementsByTagName('input')[19].focus()
+}
+
+btnOk.onclick = () => {
+    document.getElementsByTagName('input')[19].value = selecione.value
     for (let i = 0; i < 30; i++) {
         let valor = `${caixaText.value.split('\n')[i]}`
         campos[i + 20].value = valor.trim()
     }
+
 }
