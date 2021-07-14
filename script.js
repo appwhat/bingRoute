@@ -195,7 +195,9 @@ function adionar5() {
 btnInserir.onclick = () => {
     adionar5()
 }
-
+document.body.onload = () => {
+    adionar5()
+}
 
 
 /* Não é Mapa */
