@@ -49,7 +49,7 @@ function GetMap() {
     /* Tamboré */
     Microsoft.Maps.loadModule('Microsoft.Maps.SpatialMath', function() {
         // Get locations of a regular hexagon, 5 miles from each vertex the map center
-        var campinas = Microsoft.Maps.SpatialMath.getRegularPolygon(new Microsoft.Maps.Location(-23.5185274, -46.8388432), 4.1, 100, Microsoft.Maps.SpatialMath.DistanceUnits.Miles);
+        var campinas = Microsoft.Maps.SpatialMath.getRegularPolygon(new Microsoft.Maps.Location(-23.5009333, -46.8388595), 4.1, 100, Microsoft.Maps.SpatialMath.DistanceUnits.Miles);
         var zonaCampinas = new Microsoft.Maps.Polygon(campinas, { fillColor: 'rgba(255,10,10 , 0.00)', strokeColor: 'rgba(200,0,10 , 0.5)' });
         map.entities.push(zonaCampinas);
 
