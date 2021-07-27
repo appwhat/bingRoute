@@ -33,7 +33,6 @@ function GetMap() {
         var morumbi = Microsoft.Maps.SpatialMath.getRegularPolygon(new Microsoft.Maps.Location(-23.5868687, -46.725204), 4.1, 100, Microsoft.Maps.SpatialMath.DistanceUnits.Miles);
         var zonaMorumbi = new Microsoft.Maps.Polygon(morumbi, { fillColor: 'rgba(255,10,10 , 0.00)', strokeColor: 'rgba(200,0,10 , 0.5)' });
         map.entities.push(zonaMorumbi);
-
     });
     /* Campinas */
 
@@ -54,6 +53,14 @@ function GetMap() {
         map.entities.push(zonaCampinas);
 
     }); /*  */
+    /* São José do Rio Preto */
+    Microsoft.Maps.loadModule('Microsoft.Maps.SpatialMath', function() {
+        // Get locations of a regular hexagon, 5 miles from each vertex the map center
+        var saojrp = Microsoft.Maps.SpatialMath.getRegularPolygon(new Microsoft.Maps.Location(-20.8250415, -49.3870208), 4.1, 100, Microsoft.Maps.SpatialMath.DistanceUnits.Miles);
+        var zonaSaojrp = new Microsoft.Maps.Polygon(saojrp, { fillColor: 'rgba(255,10,10 , 0.00)', strokeColor: 'rgba(200,0,10 , 0.5)' });
+        map.entities.push(zonaSaojrp);
+
+    }); /*  */
 
 
 
@@ -68,8 +75,12 @@ function GetMap() {
         anchor: new Microsoft.Maps.Point(30, 40)
     });
 
-
     var pinTambore = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.5009333, -46.8388595), {
+        icon: 'https://static0.tiendeo.com.br/upload_negocio/negocio_21/logo2.png',
+        anchor: new Microsoft.Maps.Point(30, 40)
+    });
+
+    var pinSJRP = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-20.8250415, -49.3870208), {
         icon: 'https://static0.tiendeo.com.br/upload_negocio/negocio_21/logo2.png',
         anchor: new Microsoft.Maps.Point(30, 40)
     });
@@ -77,23 +88,28 @@ function GetMap() {
     map.entities.push(pinMorumbi);
     map.entities.push(pinCampinas);
     map.entities.push(pinTambore);
+    map.entities.push(pinSJRP);
 
-    var diego = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.6039345, -46.8183921), { icon: 'https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/diego.png', title: 'Diego 16km' });
+
     var leandro = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.6962183, -46.8001089), { icon: 'https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/leandro.png', title: 'Leandro 18km' });
     var waltecir = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.7934763, -46.7358249), { icon: 'https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/waltecir.png', title: 'Waltecir 33km' });
     var katia = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.6238028, -46.5201495), { icon: 'https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/katia.png', title: 'Katia 28km' });
 
-    var Cristiane = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-22.9029219, -47.2153149), { title: 'Cristiane', color: 'violet' });
-    var MarcoAntonio = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-22.8815922, -47.0400661), { title: 'Marco Antonio', color: 'orange' });
-    var AntonioValter = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-22.862145, -47.0572087), { title: 'Antonio Valter', color: "red" });
-
-    map.entities.push(diego);
     map.entities.push(leandro);
     map.entities.push(waltecir);
     map.entities.push(katia);
+
+
+
+    var Elaine = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-22.8329119, -47.2793299), { title: 'Elaine', color: 'violet' });
+    var MarcoAntonio = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-22.8815922, -47.0400661), { title: 'Marco Antonio', color: 'orange' });
+    var AntonioValter = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-22.862145, -47.0572087), { title: 'Antonio Valter', color: "red" });
+    var joseCarlos = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-22.8644, -47.0676004), { title: 'José Carlos', color: "black" });
+
     map.entities.push(MarcoAntonio);
-    map.entities.push(Cristiane);
+    map.entities.push(Elaine);
     map.entities.push(AntonioValter);
+    map.entities.push(joseCarlos);
 
     //Create a layer for rendering the data that is along a route.
     dataLayer = new Microsoft.Maps.Layer();
@@ -150,6 +166,22 @@ function GetMap() {
 }
 
 function directionsUpdated(e) {
+    /*  var alertRota = document.querySelector('#alertRota')
+
+     if (e.routeSummary[0].distance > 30.000) {
+         alertRota.style.display = 'block'
+         alertRota.innerHTML = `A rota atual ultrapassa so 30Km`
+         setInterval(() => {
+             alertRota.style.display = 'none'
+         }, 6000)
+     } else if (e.routeSummary[0].distance > 19.000) {
+         alertRota.style.display = ''
+         alertRota.innerHTML = `A rota atual Menor que 20Km`
+         setInterval(() => {
+             alertRota.style.display = 'none'
+         }, 6000)
+
+     } */
     dataLayer.clear();
 
     var currentRoute = directionsManager.getCurrentRoute();
