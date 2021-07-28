@@ -107,7 +107,9 @@ function GetMap() {
     var joseCarlos = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-22.8644, -47.0676004), { title: 'José Carlos', color: "black" });
 
     var giovanni = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.6228847, -46.7851234), { title: "Giovanni", color: "green" });
+    var julio = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.6624916, -46.8192952), { title: "Julio", color: "green" });
 
+    map.entities.push(julio)
     map.entities.push(giovanni)
     map.entities.push(MarcoAntonio);
     map.entities.push(Elaine);
