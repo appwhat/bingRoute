@@ -94,9 +94,7 @@ function GetMap() {
     var leandro = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.6962183, -46.8001089), { icon: 'https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/leandro.png', title: 'Leandro 18km' });
     var waltecir = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.7934763, -46.7358249), { icon: 'https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/waltecir.png', title: 'Waltecir 33km' });
     var katia = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.6238028, -46.5201495), { icon: 'https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/katia.png', title: 'Katia 28km' });
-    var Giovanni = new Microsoft.Maps.Pushpin(new Microsoft.Maps.location(-23.6228798, -46.7851234), { title: "Giovanni", color: '#ff0' });
 
-    map.entities.push(Giovanni)
     map.entities.push(leandro);
     map.entities.push(waltecir);
     map.entities.push(katia);
@@ -108,6 +106,9 @@ function GetMap() {
     var AntonioValter = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-22.862145, -47.0572087), { title: 'Antonio Valter', color: "red" });
     var joseCarlos = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-22.8644, -47.0676004), { title: 'José Carlos', color: "black" });
 
+    var giovanni = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.6228847, -46.7851234), { title: "Giovanni", color: "green" });
+
+    map.entities.push(giovanni)
     map.entities.push(MarcoAntonio);
     map.entities.push(Elaine);
     map.entities.push(AntonioValter);
