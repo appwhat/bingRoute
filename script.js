@@ -30,7 +30,7 @@ function GetMap() {
     /* Morumbi */
     Microsoft.Maps.loadModule('Microsoft.Maps.SpatialMath', function() {
         // Get locations of a regular hexagon, 5 miles from each vertex the map center
-        var morumbi = Microsoft.Maps.SpatialMath.getRegularPolygon(new Microsoft.Maps.Location(-23.5868687, -46.725204), 4.1, 100, Microsoft.Maps.SpatialMath.DistanceUnits.Miles);
+        var morumbi = Microsoft.Maps.SpatialMath.getRegularPolygon(new Microsoft.Maps.Location(-23.5863118,-46.7237101), 4.1, 100, Microsoft.Maps.SpatialMath.DistanceUnits.Miles);
         var zonaMorumbi = new Microsoft.Maps.Polygon(morumbi, { fillColor: 'rgba(255,10,10 , 0.00)', strokeColor: 'rgba(200,0,10 , 0.5)' });
         map.entities.push(zonaMorumbi);
     });
@@ -64,7 +64,7 @@ function GetMap() {
 
 
 
-    var pinMorumbi = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.5868687, -46.725204), {
+    var pinMorumbi = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.5863118,-46.7237101), {
         icon: 'https://static0.tiendeo.com.br/upload_negocio/negocio_21/logo2.png',
         anchor: new Microsoft.Maps.Point(30, 40)
     });
