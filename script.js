@@ -97,6 +97,7 @@ function GetMap() {
     var giovanni = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.6228847, -46.7851234), { title: "Giovanni", color: "green" });
     var julio = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.6624916, -46.8192952), { title: "Julio", color: "green" });
 
+    var carlosTambore = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.535047936062476, -46.79006946496187), { title: 'Carlos    Tamboré' });
     var joseTambore = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.52269463361998, -46.711636336628345), { title: 'José Tamboré' });
 
     var alimateia = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-22.934970393931067, -47.12454670443228), { title: 'Alimateia' });
@@ -105,6 +106,7 @@ function GetMap() {
     var joseCarlos = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-22.8644, -47.0676004), { title: 'José Carlos', color: "black" });
 
 
+    map.entities.push(carlosTambore);
     map.entities.push(joseTambore);
 
     map.entities.push(leandro);
