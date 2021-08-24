@@ -30,7 +30,7 @@ function GetMap() {
     /* Morumbi */
     Microsoft.Maps.loadModule('Microsoft.Maps.SpatialMath', function() {
         // Get locations of a regular hexagon, 5 miles from each vertex the map center
-        var morumbi = Microsoft.Maps.SpatialMath.getRegularPolygon(new Microsoft.Maps.Location(-23.5863118,-46.7237101), 4.1, 100, Microsoft.Maps.SpatialMath.DistanceUnits.Miles);
+        var morumbi = Microsoft.Maps.SpatialMath.getRegularPolygon(new Microsoft.Maps.Location(-23.5863118, -46.7237101), 4.1, 100, Microsoft.Maps.SpatialMath.DistanceUnits.Miles);
         var zonaMorumbi = new Microsoft.Maps.Polygon(morumbi, { fillColor: 'rgba(255,10,10 , 0.00)', strokeColor: 'rgba(200,0,10 , 0.5)' });
         map.entities.push(zonaMorumbi);
     });
@@ -64,7 +64,7 @@ function GetMap() {
 
 
 
-    var pinMorumbi = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.5863118,-46.7237101), {
+    var pinMorumbi = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.5863118, -46.7237101), {
         icon: 'https://static0.tiendeo.com.br/upload_negocio/negocio_21/logo2.png',
         anchor: new Microsoft.Maps.Point(30, 40)
     });
@@ -91,28 +91,30 @@ function GetMap() {
     map.entities.push(pinSJRP);
 
 
-    var leandro = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.6962183, -46.8001089), { icon: 'https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/leandro.png', title: 'Leandro 18km' });
-    var waltecir = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.7934763, -46.7358249), { icon: 'https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/waltecir.png', title: 'Waltecir 33km' });
-    var katia = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.6238028, -46.5201495), { icon: 'https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/katia.png', title: 'Katia 28km' });
+    var leandro = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.6962183, -46.8001089), { title: 'Leandro 18km' });
+    var waltecir = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.7934763, -46.7358249), { title: 'Waltecir 33km' });
+    var leandroNovato = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.6212564, -46.8012588), { title: 'Leandro Novato' });
+    var giovanni = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.6228847, -46.7851234), { title: "Giovanni", color: "green" });
+    var julio = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.6624916, -46.8192952), { title: "Julio", color: "green" });
 
-    map.entities.push(leandro);
-    map.entities.push(waltecir);
-    map.entities.push(katia);
+    var joseTambore = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.52269463361998, -46.711636336628345), { title: 'José Tamboré' });
 
-
-
-    var Elaine = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-22.8329119, -47.2793299), { title: 'Elaine', color: 'violet' });
+    var alimateia = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-22.934970393931067, -47.12454670443228), { title: 'Alimateia' });
     var MarcoAntonio = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-22.8815922, -47.0400661), { title: 'Marco Antonio', color: 'orange' });
     var AntonioValter = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-22.862145, -47.0572087), { title: 'Antonio Valter', color: "red" });
     var joseCarlos = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-22.8644, -47.0676004), { title: 'José Carlos', color: "black" });
 
-    var giovanni = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.6228847, -46.7851234), { title: "Giovanni", color: "green" });
-    var julio = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.6624916, -46.8192952), { title: "Julio", color: "green" });
 
-    map.entities.push(julio)
+    map.entities.push(joseTambore);
+
+    map.entities.push(leandro);
+    map.entities.push(waltecir);
+    map.entities.push(leandroNovato);
     map.entities.push(giovanni)
+    map.entities.push(julio)
+
+    map.entities.push(alimateia);
     map.entities.push(MarcoAntonio);
-    map.entities.push(Elaine);
     map.entities.push(AntonioValter);
     map.entities.push(joseCarlos);
 
