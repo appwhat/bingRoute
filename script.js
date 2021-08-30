@@ -29,18 +29,18 @@ function GetMap() {
         /* Trafigo */
 
         onkeydown = (e) => {
-            if (e.ctrlKey && e.shiftKey) {
-                if (manager.show) {
-                    manager.hide();
-                }
-            }
+            if (e.ctrlKey && e.shiftKey) { if (manager.show) { manager.hide(); } }
             if (e.ctrlKey && e.altKey) {
                 if (manager.hide) {
                     manager.show();
                     manager.hideIncidents();
                 }
             }
-
+            if (e.shiftKey && e.code == 'Enter') { mostarOcultar() }
+            if (e.ctrlKey && e.code == 'Delete') { limparCampos() }
+            if (e.ctrlKey && e.code == 'Enter') { adionar5() }
+            if (e.shiftKey && e.key == 'S') { mostarOcultarSearch() }
+            if (e.ctrlKey && e.code == 'Space') { preencherAll() }
         }
     });
 
@@ -362,14 +362,16 @@ document.body.onload = () => {
     adionar5()
 }
 
-onkeydown = (e) => {
-    if (e.shiftKey && e.code == 'Enter') { mostarOcultar() }
-    if (e.ctrlKey && e.code == 'Delete') { limparCampos() }
-    if (e.ctrlKey && e.code == 'Enter') { adionar5() }
-    if (e.shiftKey && e.key == 'S') { mostarOcultarSearch() }
-    if (e.ctrlKey && e.code == 'Space') {
-        preencherAll()
+function preencherAll() {
+    document.getElementsByTagName('input')[20].value = selecione.value
+    for (let i = 0; i < 25; i++) {
+        let valor = `${caixaText.value.split('\n')[i]}`
+        campos[i + 21].value = valor.trim()
     }
+}
+
+onkeydown = (e) => {
+
 }
 
 
@@ -385,12 +387,6 @@ selecione.onchange = () => {
     document.getElementsByTagName('input')[20].focus()
 }
 
-function preencherAll() {
-    document.getElementsByTagName('input')[20].value = selecione.value
-    for (let i = 0; i < 25; i++) {
-        let valor = `${caixaText.value.split('\n')[i]}`
-        campos[i + 21].value = valor.trim()
-    }
-}
+
 
 btnOk.onclick = () => preencherAll()
