@@ -91,30 +91,43 @@ function GetMap() {
     map.entities.push(pinSJRP);
 
 
-    var leandro = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.6962183, -46.8001089), { title: 'Leandro 18km' });
-    var waltecir = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.7934763, -46.7358249), { title: 'Waltecir 33km' });
-    var leandroNovato = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.6212564, -46.8012588), { title: 'Leandro Novato' });
-    var giovanni = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.6228847, -46.7851234), { title: "Giovanni", color: "green" });
-    var julio = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.6624916, -46.8192952), { title: "Julio", color: "green" });
+    var JhonatasMorumbi = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.770671548686664, -46.715081647170436), { title: 'Jhonatas Fernandes FHN6709', color: 'black' });
+    var JonnyMorumbi = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.622915137929112, -46.80977578765919), { title: 'Johnny dos Santos EUF2D36', color: 'black' });
+    var leandro = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.6962183, -46.8001089), { title: 'Leandro da Silva Gadelha EBN3A31', color: 'black' });
+    var waltecir = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.7934763, -46.7358249), { title: 'Waltecir da Silva EDT1660', color: 'black' });
+    var leandroNovato = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.6212564, -46.8012588), { title: 'Leandro Souza Batista IWX7705', color: 'black' });
+    var giovanni = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.6228847, -46.7851234), { title: "Giovani de Oliveira FLN4J40", color: 'black' });
+    var julio = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.6624916, -46.8192952), { title: "Julio", color: 'black' });
 
-    var carlosTambore = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.535047936062476, -46.79006946496187), { title: 'Carlos    Tamboré' });
-    var joseTambore = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.52269463361998, -46.711636336628345), { title: 'José Tamboré' });
+    var carlosTambore = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.535047936062476, -46.79006946496187), { title: 'Carlos Eduardo Carleto MEL9103', color: "blue" });
+    var joseTambore = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.52269463361998, -46.711636336628345), { title: 'Jose de Farias Silva CVT8670', color: "blue" });
+    var JeffersonAkiraTamboré = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.531898189352848, -46.86100226067139), { title: 'Jefferson Akira Mizusaki LKV8459', color: "blue" });
 
-    var alimateia = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-22.934970393931067, -47.12454670443228), { title: 'Alimateia' });
-    var MarcoAntonio = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-22.8815922, -47.0400661), { title: 'Marco Antonio', color: 'orange' });
-    var AntonioValter = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-22.862145, -47.0572087), { title: 'Antonio Valter', color: "red" });
-    var joseCarlos = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-22.8644, -47.0676004), { title: 'José Carlos', color: "black" });
+    var flavioHenrique = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-22.898812371440197, -47.02625422627076), { title: 'Flavio Henrique Batista FQR2J28', color: "red" });
+    var alimateia = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-22.934970393931067, -47.12454670443228), { title: 'Alimateia Teixeira dos Santos BWQ5F02', color: "red" });
+    var MarcoAntonio = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-22.8815922, -47.0400661), { title: 'Marco Antonio Ribeiro QNB4C23', color: "red" });
+    var AntonioValter = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-22.862145, -47.0572087), { title: 'Antonio Valter Fávero FDV5443', color: "red" });
+    var joseCarlos = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-22.8644, -47.0676004), { title: 'José carlos Butin FZU4H56', color: "red" });
 
+    var RafaelSJRP = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-20.80910259648554, -49.51699067249802), { title: 'Rafael Soares Pires	DNK9I59', color: "red" });
+    var EdersonSJRP = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-20.8387998301064, -49.37501794724071), { title: 'Ederson Cristiano Pereira dos Santos	ERD5I01', color: "black" });
 
     map.entities.push(carlosTambore);
     map.entities.push(joseTambore);
+    map.entities.push(JeffersonAkiraTamboré);
 
+    map.entities.push(JhonatasMorumbi);
+    map.entities.push(JonnyMorumbi);
     map.entities.push(leandro);
     map.entities.push(waltecir);
     map.entities.push(leandroNovato);
     map.entities.push(giovanni)
     map.entities.push(julio)
 
+    map.entities.push(RafaelSJRP)
+    map.entities.push(EdersonSJRP)
+
+    map.entities.push(flavioHenrique);
     map.entities.push(alimateia);
     map.entities.push(MarcoAntonio);
     map.entities.push(AntonioValter);
@@ -305,6 +318,7 @@ var btnSearch = document.getElementById('btnSearch')
 function mostarOcultar() {
     if (caixaText.style.display == "none") {
         caixaText.style.display = "block"
+        caixaText.focus()
     } else {
         caixaText.style.display = "none"
     }
@@ -335,6 +349,7 @@ onkeydown = (e) => {
     if (e.ctrlKey && e.code == 'Delete') { limparCampos() }
     if (e.ctrlKey && e.code == 'Enter') { adionar5() }
     if (e.shiftKey && e.key == 'S') { mostarOcultarSearch() }
+    if (e.ctrlKey && e.code == 'Space') { preencherAll() }
 }
 
 
@@ -350,11 +365,12 @@ selecione.onchange = () => {
     document.getElementsByTagName('input')[20].focus()
 }
 
-btnOk.onclick = () => {
+function preencherAll() {
     document.getElementsByTagName('input')[20].value = selecione.value
-    for (let i = 0; i < 30; i++) {
+    for (let i = 0; i < 25; i++) {
         let valor = `${caixaText.value.split('\n')[i]}`
         campos[i + 21].value = valor.trim()
     }
-
 }
+
+btnOk.onclick = () => preencherAll()
