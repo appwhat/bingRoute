@@ -24,7 +24,25 @@ function GetMap() {
     });
 
 
+    Microsoft.Maps.loadModule('Microsoft.Maps.Traffic', function() {
+        var manager = new Microsoft.Maps.Traffic.TrafficManager(map);
+        /* Trafigo */
 
+        onkeydown = (e) => {
+            if (e.ctrlKey && e.shiftKey) {
+                if (manager.show) {
+                    manager.hide();
+                }
+            }
+            if (e.ctrlKey && e.altKey) {
+                if (manager.hide) {
+                    manager.show();
+                    manager.hideIncidents();
+                }
+            }
+
+        }
+    });
 
 
     /* Morumbi */
@@ -349,7 +367,9 @@ onkeydown = (e) => {
     if (e.ctrlKey && e.code == 'Delete') { limparCampos() }
     if (e.ctrlKey && e.code == 'Enter') { adionar5() }
     if (e.shiftKey && e.key == 'S') { mostarOcultarSearch() }
-    if (e.ctrlKey && e.code == 'Space') { preencherAll() }
+    if (e.ctrlKey && e.code == 'Space') {
+        preencherAll()
+    }
 }
 
 
