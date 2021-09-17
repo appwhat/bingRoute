@@ -48,7 +48,7 @@ function GetMap() {
     /* Morumbi */
     Microsoft.Maps.loadModule('Microsoft.Maps.SpatialMath', function() {
         // Get locations of a regular hexagon, 5 miles from each vertex the map center
-        var morumbi = Microsoft.Maps.SpatialMath.getRegularPolygon(new Microsoft.Maps.Location(-23.5863118, -46.7237101), 4.1, 100, Microsoft.Maps.SpatialMath.DistanceUnits.Miles);
+        var morumbi = Microsoft.Maps.SpatialMath.getRegularPolygon(new Microsoft.Maps.Location(-23.5863118, -46.7237101), 6, 100, Microsoft.Maps.SpatialMath.DistanceUnits.Miles);
         var zonaMorumbi = new Microsoft.Maps.Polygon(morumbi, { fillColor: 'rgba(255,10,10 , 0.00)', strokeColor: 'rgba(200,0,10 , 0.5)' });
         map.entities.push(zonaMorumbi);
     });
@@ -56,7 +56,7 @@ function GetMap() {
 
     Microsoft.Maps.loadModule('Microsoft.Maps.SpatialMath', function() {
         // Get locations of a regular hexagon, 5 miles from each vertex the map center
-        var campinas = Microsoft.Maps.SpatialMath.getRegularPolygon(new Microsoft.Maps.Location(-22.8608181, -47.0237889), 4.1, 100, Microsoft.Maps.SpatialMath.DistanceUnits.Miles);
+        var campinas = Microsoft.Maps.SpatialMath.getRegularPolygon(new Microsoft.Maps.Location(-22.8608181, -47.0237889), 6, 100, Microsoft.Maps.SpatialMath.DistanceUnits.Miles);
         var zonaCampinas = new Microsoft.Maps.Polygon(campinas, { fillColor: 'rgba(255,10,10 , 0.00)', strokeColor: 'rgba(200,0,10 , 0.5)' });
         map.entities.push(zonaCampinas);
 
@@ -66,7 +66,7 @@ function GetMap() {
     /* Tamboré */
     Microsoft.Maps.loadModule('Microsoft.Maps.SpatialMath', function() {
         // Get locations of a regular hexagon, 5 miles from each vertex the map center
-        var campinas = Microsoft.Maps.SpatialMath.getRegularPolygon(new Microsoft.Maps.Location(-23.5009333, -46.8388595), 4.1, 100, Microsoft.Maps.SpatialMath.DistanceUnits.Miles);
+        var campinas = Microsoft.Maps.SpatialMath.getRegularPolygon(new Microsoft.Maps.Location(-23.5009333, -46.8388595), 6, 100, Microsoft.Maps.SpatialMath.DistanceUnits.Miles);
         var zonaCampinas = new Microsoft.Maps.Polygon(campinas, { fillColor: 'rgba(255,10,10 , 0.00)', strokeColor: 'rgba(200,0,10 , 0.5)' });
         map.entities.push(zonaCampinas);
 
@@ -74,7 +74,7 @@ function GetMap() {
     /* São José do Rio Preto */
     Microsoft.Maps.loadModule('Microsoft.Maps.SpatialMath', function() {
         // Get locations of a regular hexagon, 5 miles from each vertex the map center
-        var saojrp = Microsoft.Maps.SpatialMath.getRegularPolygon(new Microsoft.Maps.Location(-20.8250415, -49.3870208), 4.1, 100, Microsoft.Maps.SpatialMath.DistanceUnits.Miles);
+        var saojrp = Microsoft.Maps.SpatialMath.getRegularPolygon(new Microsoft.Maps.Location(-20.8250415, -49.3870208), 6, 100, Microsoft.Maps.SpatialMath.DistanceUnits.Miles);
         var zonaSaojrp = new Microsoft.Maps.Polygon(saojrp, { fillColor: 'rgba(255,10,10 , 0.00)', strokeColor: 'rgba(200,0,10 , 0.5)' });
         map.entities.push(zonaSaojrp);
 
