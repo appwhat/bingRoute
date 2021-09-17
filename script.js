@@ -110,7 +110,7 @@ function GetMap() {
     map.entities.push(pinSJRP);
 
 
-    var JhonatasMorumbi = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.770671548686664, -46.715081647170436), { title: 'Jhonatas Fernandes FHN6709', color: 'black', icon: "/motors/m3.png" });
+    var JhonatasMorumbi = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.770671548686664, -46.715081647170436), { title: 'Jhonatas Fernandes FHN6709', color: 'black', icon: "https://github.com/appwhat/bingRoute/blob/main/motors/m3.png" });
     var JonnyMorumbi = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.622915137929112, -46.80977578765919), { title: 'Johnny dos Santos EUF2D36', color: 'black', icon: "/motors/m3.png" });
     var leandro = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.6962183, -46.8001089), { title: 'Leandro da Silva Gadelha EBN3A31', color: 'black', icon: "/motors/m3.png" });
     var waltecir = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.7934763, -46.7358249), { title: 'Waltecir da Silva EDT1660', color: 'black', icon: "/motors/m3.png" });
