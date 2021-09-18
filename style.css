@@ -167,8 +167,8 @@ body .MicrosoftMap .dirWp input {
     font-family: 'Courier New', Courier, monospace;
     z-index: 999;
     position: absolute;
-    top: 40%;
-    left: 40%;
+    top: 0%;
+    right: 8%;
     text-align: center;
 }
 
