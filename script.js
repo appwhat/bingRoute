@@ -367,6 +367,9 @@ function preencherAll() {
     document.getElementsByTagName('input')[20].value = selecione.value
     for (let i = 0; i < 25; i++) {
         let valor = `${caixaText.value.split('\n')[i]}`
+         if (valor === '' || valor === 'undefined' || valor.length < 9) {
+            break;
+        }
         campos[i + 21].value = valor.trim()
     }
 }
