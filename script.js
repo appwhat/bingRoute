@@ -1,7 +1,7 @@
 var map, infobox, dataLayer, directionsManager;
 
 
-var sdsDataSourceUrl = 'http://spatial.virtualearth.net/REST/v1/data/20181f26d9e94c81acdf9496133d4f23/FourthCoffeeSample/FourthCoffeeShops';
+var sdsDataSourceUrl = 'https://spatial.virtualearth.net/REST/v1/data/f42cab32d0ee41738d90856badd638d3/USCensus2010_ZCTA5/ZCTA5';
 
 function GetMap() {
     map = new Microsoft.Maps.Map('#myMap', {
@@ -15,7 +15,8 @@ function GetMap() {
         callback: () => {
             var manager = new Microsoft.Maps.AutosuggestManager({ maxResults: 5, businessSuggestions: true });
             manager.attachAutosuggest('#searchBox', '#searchBoxContainer', (suggestionResult) => {
-                /* document.getElementsByTagName('input')[20].value = suggestionResult.formattedSuggestion; */
+                console.log(suggestionResult)
+                document.getElementsByTagName('input')[20].value = suggestionResult.subtitle
             })
         },
         errorCallback: (message) => {
@@ -207,7 +208,8 @@ function GetMap() {
 }
 
 function directionsUpdated(e) {
-    /*  var alertRota = document.querySelector('#alertRota')
+    /*console.log(e)
+      var alertRota = document.querySelector('#alertRota')
 
      if (e.routeSummary[0].distance > 30.000) {
          alertRota.style.display = 'block'
@@ -257,6 +259,7 @@ function directionsUpdated(e) {
     Microsoft.Maps.SpatialDataService.QueryAPIManager.search(queryOptions, map, function(data) {
         //Add results to the map.
         dataLayer.add(data);
+
     });
 }
 
@@ -364,10 +367,11 @@ document.body.onload = () => {
 }
 
 function preencherAll() {
-    document.getElementsByTagName('input')[20].value = selecione.value
+    /* document.getElementsByTagName('input')[20].value = selecione.value */
     for (let i = 0; i < 25; i++) {
+
         let valor = `${caixaText.value.split('\n')[i]}`
-         if (valor === '' || valor === 'undefined' || valor.length < 9) {
+        if (valor === '' || valor === 'undefined' || valor.length < 9) {
             break;
         }
         campos[i + 21].value = valor.trim()
