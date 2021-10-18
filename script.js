@@ -50,7 +50,7 @@ function GetMap() {
     Microsoft.Maps.loadModule('Microsoft.Maps.SpatialMath', function() {
         // Get locations of a regular hexagon, 5 miles from each vertex the map center
         var morumbi = Microsoft.Maps.SpatialMath.getRegularPolygon(new Microsoft.Maps.Location(-23.5863118, -46.7237101), 6, 100, Microsoft.Maps.SpatialMath.DistanceUnits.Miles);
-        var zonaMorumbi = new Microsoft.Maps.Polygon(morumbi, { fillColor: 'rgba(255,10,10 , 0.00)', strokeColor: 'rgba(200,0,10 , 0.5)' });
+        var zonaMorumbi = new Microsoft.Maps.Polygon(morumbi, { fillColor: 'rgba(255,250,10 , 0.1)', strokeColor: 'rgba(200,0,10 , 0.5)' });
         map.entities.push(zonaMorumbi);
     });
     /* Campinas */
@@ -58,25 +58,33 @@ function GetMap() {
     Microsoft.Maps.loadModule('Microsoft.Maps.SpatialMath', function() {
         // Get locations of a regular hexagon, 5 miles from each vertex the map center
         var campinas = Microsoft.Maps.SpatialMath.getRegularPolygon(new Microsoft.Maps.Location(-22.8608181, -47.0237889), 6, 100, Microsoft.Maps.SpatialMath.DistanceUnits.Miles);
-        var zonaCampinas = new Microsoft.Maps.Polygon(campinas, { fillColor: 'rgba(255,10,10 , 0.00)', strokeColor: 'rgba(200,0,10 , 0.5)' });
+        var zonaCampinas = new Microsoft.Maps.Polygon(campinas, { fillColor: 'rgba(255,10,10 , 0.1)', strokeColor: 'rgba(200,0,10 , 0.5)' });
         map.entities.push(zonaCampinas);
 
     });
 
 
-    /* Tamboré */
+    /*SAM`S Tamboré */
     Microsoft.Maps.loadModule('Microsoft.Maps.SpatialMath', function() {
         // Get locations of a regular hexagon, 5 miles from each vertex the map center
-        var campinas = Microsoft.Maps.SpatialMath.getRegularPolygon(new Microsoft.Maps.Location(-23.5009333, -46.8388595), 6, 100, Microsoft.Maps.SpatialMath.DistanceUnits.Miles);
-        var zonaCampinas = new Microsoft.Maps.Polygon(campinas, { fillColor: 'rgba(255,10,10 , 0.00)', strokeColor: 'rgba(200,0,10 , 0.5)' });
-        map.entities.push(zonaCampinas);
+        var tamboré = Microsoft.Maps.SpatialMath.getRegularPolygon(new Microsoft.Maps.Location(-23.5009333, -46.8388595), 6, 100, Microsoft.Maps.SpatialMath.DistanceUnits.Miles);
+        var zonaTamboré = new Microsoft.Maps.Polygon(tamboré, { fillColor: 'rgba(255,10,250 , 0.1)', strokeColor: 'rgba(200,0,10 , 0.5)' });
+        map.entities.push(zonaTamboré);
+
+    }); /*  */
+       /*BIG Tamboré */
+    Microsoft.Maps.loadModule('Microsoft.Maps.SpatialMath', function() {
+        // Get locations of a regular hexagon, 5 miles from each vertex the map center
+        var bigTamboré = Microsoft.Maps.SpatialMath.getRegularPolygon(new Microsoft.Maps.Location(-23.50098992879626, -46.836054831837195), 6, 100, Microsoft.Maps.SpatialMath.DistanceUnits.Miles);
+        var zonabigTamboré = new Microsoft.Maps.Polygon(bigTamboré, { fillColor: 'rgba(100,100,100 , 0.1)', strokeColor: 'rgba(200,0,10 , 0.5)' });
+        map.entities.push(zonabigTamboré);
 
     }); /*  */
     /* São José do Rio Preto */
     Microsoft.Maps.loadModule('Microsoft.Maps.SpatialMath', function() {
         // Get locations of a regular hexagon, 5 miles from each vertex the map center
         var saojrp = Microsoft.Maps.SpatialMath.getRegularPolygon(new Microsoft.Maps.Location(-20.8250415, -49.3870208), 6, 100, Microsoft.Maps.SpatialMath.DistanceUnits.Miles);
-        var zonaSaojrp = new Microsoft.Maps.Polygon(saojrp, { fillColor: 'rgba(255,10,10 , 0.00)', strokeColor: 'rgba(200,0,10 , 0.5)' });
+        var zonaSaojrp = new Microsoft.Maps.Polygon(saojrp, { fillColor: 'rgba(0,0,250 , 0.1)', strokeColor: 'rgba(200,0,10 , 0.5)' });
         map.entities.push(zonaSaojrp);
 
     }); /*  */
@@ -94,10 +102,16 @@ function GetMap() {
         anchor: new Microsoft.Maps.Point(30, 40)
     });
 
-    var pinTambore = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.5009333, -46.8388595), {
+    var pinTambore = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.5008784486396, -46.8366598054593), {
         icon: 'https://static0.tiendeo.com.br/upload_negocio/negocio_21/logo2.png',
         anchor: new Microsoft.Maps.Point(30, 40),
-        title: "Campinas"
+        title: "Sam´s Tamboré"
+    });
+
+    var pinBigTambore = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.501128906451363, -46.83603771803761), {
+        icon: 'https://bighiper.vtexassets.com/assets/vtex.file-manager-graphql/images/e959be9a-138c-4914-855d-0288deb73727___5a363558d74b987c60d716bef9ceffb4.png',
+        anchor: new Microsoft.Maps.Point(50, 40),
+        title: "Big Tamboré"
     });
 
     var pinSJRP = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-20.8250415, -49.3870208), {
@@ -105,6 +119,7 @@ function GetMap() {
         anchor: new Microsoft.Maps.Point(30, 40)
     });
 
+    map.entities.push(pinBigTambore);
     map.entities.push(pinMorumbi);
     map.entities.push(pinCampinas);
     map.entities.push(pinTambore);
@@ -129,7 +144,7 @@ function GetMap() {
     var AntonioValter = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-22.862145, -47.0572087), { title: 'Antonio Valter Fávero FDV5443', color: "red", icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
     var joseCarlos = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-22.8644, -47.0676004), { title: 'José carlos Butin FZU4H56', color: "red", icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
 
-    var RafaelSJRP = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-20.80910259648554, -49.51699067249802), { title: 'Rafael Soares Pires	DNK9I59', color: "red", icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
+    var AndreSJRP = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-20.80626224856608, -49.508068689571516), { title: 'André DNK9I59', color: "red", icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
     var EdersonSJRP = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-20.8387998301064, -49.37501794724071), { title: 'Ederson Cristiano Pereira dos Santos	ERD5I01', color: "black", icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
 
     map.entities.push(carlosTambore);
@@ -144,7 +159,7 @@ function GetMap() {
     map.entities.push(giovanni)
     map.entities.push(julio)
 
-    map.entities.push(RafaelSJRP)
+    map.entities.push(AndreSJRP)
     map.entities.push(EdersonSJRP)
 
     map.entities.push(flavioHenrique);
