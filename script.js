@@ -10,6 +10,7 @@ function GetMap() {
         /* mapTypeId: Microsoft.Maps.MapTypeId.canvasDark, */
     });
 
+
     var center = map.getCenter();
     Microsoft.Maps.loadModule('Microsoft.Maps.AutoSuggest', {
         callback: () => {
@@ -89,8 +90,8 @@ function GetMap() {
 
     }); /*  */
 
-
-
+    
+    
     var pinMorumbi = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.5863118, -46.7237101), {
         icon: 'https://static0.tiendeo.com.br/upload_negocio/negocio_21/logo2.png',
         anchor: new Microsoft.Maps.Point(30, 40)
@@ -124,7 +125,12 @@ function GetMap() {
     map.entities.push(pinCampinas);
     map.entities.push(pinTambore);
     map.entities.push(pinSJRP);
-
+/* Centralizar */
+    Microsoft.Maps.Events.addHandler(pinBigTambore, 'click', function (args) { map.setView({ center: args.target.getLocation(), zoom: 13 }); });
+    Microsoft.Maps.Events.addHandler(pinMorumbi, 'click', function (args) { map.setView({ center: args.target.getLocation(), zoom: 13 }); });
+    Microsoft.Maps.Events.addHandler(pinCampinas, 'click', function (args) { map.setView({ center: args.target.getLocation(), zoom: 13 }); });
+    Microsoft.Maps.Events.addHandler(pinTambore, 'click', function (args) { map.setView({ center: args.target.getLocation(), zoom: 13 }); });
+    Microsoft.Maps.Events.addHandler(pinSJRP, 'click', function (args) { map.setView({ center: args.target.getLocation(), zoom: 13 }); });
 
     var JhonatasMorumbi = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.770671548686664, -46.715081647170436), { title: 'Jhonatas Fernandes FHN6709', color: 'black', icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
     var JonnyMorumbi = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.622915137929112, -46.80977578765919), { title: 'Johnny dos Santos EUF2D36', color: 'black', icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
