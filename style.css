@@ -73,9 +73,9 @@ i.icon:hover {
     position: absolute;
     bottom: 0;
     left: 0px;
-    color: black;
+    color: white;
     margin-left: 2%;
-    background-color: #00809d;
+    background-color: red;
     font-size: 20px;
     text-align: center;
     outline: none;
@@ -93,9 +93,9 @@ i.icon:hover {
     position: absolute;
     top: 50px;
     left: 0px;
-    color: black;
+    color: white;
     margin-left: 2%;
-    background-color: #00809d;
+    background-color: red;
     font-size: 16px;
     text-align: center;
     outline: none;
@@ -125,8 +125,16 @@ i.icon:hover {
 
 body .MicrosoftMap .dirWp input {
     left: 50px !important;
-}
+    color: red !important;
 
+}
+.MicrosoftMap .dirWp .icon{
+    background-color: transparent !important;
+    color: red !important;
+    font-size: 16px !important;
+    font-weight: 1000;
+
+}
 .directionsPanel {
     background-color: white;
     width: 100%;
