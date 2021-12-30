@@ -132,40 +132,76 @@ function GetMap() {
     Microsoft.Maps.Events.addHandler(pinTambore, 'click', function (args) { map.setView({ center: args.target.getLocation(), zoom: 13 }); });
     Microsoft.Maps.Events.addHandler(pinSJRP, 'click', function (args) { map.setView({ center: args.target.getLocation(), zoom: 13 }); });
 
-    var JhonatasMorumbi = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.770671548686664, -46.715081647170436), { title: 'Jhonatas Fernandes FHN6709', color: 'black', icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
-    var JonnyMorumbi = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.622915137929112, -46.80977578765919), { title: 'Johnny dos Santos EUF2D36', color: 'black', icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
+//Posto
+var PostoOsasco = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.50564480864178, -46.788773337021965), {
+    icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/gasstation_4334%20(1).png",
+    anchor: new Microsoft.Maps.Point(50, 40),
+    title: "Posto Osasco"
+});
+
+var PostoMorumbi = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.587883074040803, -46.723281091118295), {
+    icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/gasstation_4334%20(1).png",
+    anchor: new Microsoft.Maps.Point(50, 40),
+    title: "Posto Morumbi"
+});
+
+map.entities.push(PostoOsasco);
+map.entities.push(PostoMorumbi);
+
+
+
+    //var JhonatasMorumbi = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.770671548686664, -46.715081647170436), { title: 'Jhonatas Fernandes FHN6709', color: 'black', icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
+    //var JonnyMorumbi = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.622915137929112, -46.80977578765919), { title: 'Johnny dos Santos EUF2D36', color: 'black', icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
     var leandro = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.6962183, -46.8001089), { title: 'Leandro da Silva Gadelha EBN3A31', color: 'black', icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
     var waltecir = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.7934763, -46.7358249), { title: 'Waltecir da Silva EDT1660', color: 'black', icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
-    var leandroNovato = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.6212564, -46.8012588), { title: 'Leandro Souza Batista IWX7705', color: 'black', icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
+    //var leandroNovato = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.6212564, -46.8012588), { title: 'Leandro Souza Batista IWX7705', color: 'black', icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
     var giovanni = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.6228847, -46.7851234), { title: "Giovani de Oliveira FLN4J40", color: 'black', icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
-    var julio = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.6624916, -46.8192952), { title: "Julio", color: 'black', icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
+    var julio = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.6624916, -46.8192952), { title: "Julio Cesar Campanha OMA2349", color: 'black', icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
+    //Tambore
 
-    var carlosTambore = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.535047936062476, -46.79006946496187), { title: 'Carlos Eduardo Carleto MEL9103', color: "blue", icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
-    var joseTambore = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.52269463361998, -46.711636336628345), { title: 'Jose de Farias Silva CVT8670', color: "blue", icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
     var JeffersonAkiraTamboré = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.531898189352848, -46.86100226067139), { title: 'Jefferson Akira Mizusaki LKV8459', color: "blue", icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
-
+    //Verificar o endereço do Carlos    
+    var carlosTambore = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.532811112543776, -46.80360364717909), { title: 'Carlos Alberto Assis de Oliveira KNM5791', color: "blue", icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
+    var FernandoTambore = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.403597546910227, -46.74366104749553), { title: 'Fernando Arruda EIH2018', color: "blue", icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
+    var joseTambore = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.52269463361998, -46.711636336628345), { title: 'Jose de Farias Silva CVT8670', color: "blue", icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
+    var MayconTambore = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.49635965799176, -46.80293806536161), { title: 'Maycon Erickson dos Santos DEN9H93', color: "blue", icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
+    var DanielTambore = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.54718826039277, -46.85750743207862), { title: 'Daniel Araujo de lima LKV8459', color: "blue", icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
+    var OrlandoTambore = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.489180953309173, -46.79066493176556), { title: 'Orlando Lemes DZB0993', color: "blue", icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
+    var WesleyTambore = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.548306638271093, -46.83524651582318), { title: 'Wesley Souza Santos DEE9135', color: "blue", icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
+    var EdvalTambore = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.51104904468552, -46.785195060775266), { title: 'Edval Custódio João de Souza GEU1684', color: "blue", icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
+    
+    //CAMPINAS
     var flavioHenrique = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-22.898812371440197, -47.02625422627076), { title: 'Flavio Henrique Batista FQR2J28', color: "red", icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
     var alimateia = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-22.934970393931067, -47.12454670443228), { title: 'Alimateia Teixeira dos Santos BWQ5F02', color: "red", icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
     var MarcoAntonio = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-22.8815922, -47.0400661), { title: 'Marco Antonio Ribeiro QNB4C23', color: "red", icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
     var AntonioValter = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-22.862145, -47.0572087), { title: 'Antonio Valter Fávero FDV5443', color: "red", icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
     var joseCarlos = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-22.8644, -47.0676004), { title: 'José carlos Butin FZU4H56', color: "red", icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
 
-    var AndreSJRP = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-20.80626224856608, -49.508068689571516), { title: 'André DNK9I59', color: "red", icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
+    //SJRP
+    var LeandroSJRP = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-20.81478422884874, -49.48804826144113), { title: 'Leandro Santana Oliveira DNK9I59', color: "red", icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
+    var ThiagoSJRP = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-20.754241125224006, -49.43428855902518), { title: 'Thiago Leme Siva EBP8744', color: "red", icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
     var EdersonSJRP = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-20.8387998301064, -49.37501794724071), { title: 'Ederson Cristiano Pereira dos Santos	ERD5I01', color: "black", icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
 
     map.entities.push(carlosTambore);
-    map.entities.push(joseTambore);
+    map.entities.push(carlosTambore);
+    map.entities.push(FernandoTambore);
     map.entities.push(JeffersonAkiraTamboré);
+    map.entities.push(MayconTambore);
+    map.entities.push(DanielTambore);
+    map.entities.push(OrlandoTambore);
+    map.entities.push(WesleyTambore);
+    map.entities.push(EdvalTambore);
 
-    map.entities.push(JhonatasMorumbi);
-    map.entities.push(JonnyMorumbi);
+    //map.entities.push(JhonatasMorumbi);
+    //map.entities.push(JonnyMorumbi);
     map.entities.push(leandro);
     map.entities.push(waltecir);
-    map.entities.push(leandroNovato);
+    //map.entities.push(leandroNovato);
     map.entities.push(giovanni)
     map.entities.push(julio)
 
-    map.entities.push(AndreSJRP)
+    map.entities.push(LeandroSJRP)
+    map.entities.push(ThiagoSJRP)
     map.entities.push(EdersonSJRP)
 
     map.entities.push(flavioHenrique);
