@@ -173,7 +173,7 @@ map.entities.push(PostoMorumbi);
     var OrlandoTambore = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.489180953309173, -46.79066493176556), { title: 'Orlando Lemes DZB0993', color: "blue", icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
     var WesleyTambore = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.548306638271093, -46.83524651582318), { title: 'Wesley Souza Santos DEE9135', color: "blue", icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
     var EdvalTambore = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.51104904468552, -46.785195060775266), { title: 'Edval Custódio João de Souza GEU1684', color: "blue", icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
-    var ManoelTambore = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.402015905304307, -46.8588989614042), { title: 'Manoel Charles dos Santos EPH8J72', color: "blue", icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
+    var ManoelTambore = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.425619157731724, -46.84948264686319), { title: 'Manoel Charles dos Santos EPH8J72', color: "blue", icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
 
     //CAMPINAS
     var flavioHenrique = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-22.898812371440197, -47.02625422627076), { title: 'Flavio Henrique Batista FQR2J28', color: "red", icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
