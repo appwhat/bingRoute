@@ -31,7 +31,7 @@
         text-align: start;
         outline: none;
         border: 1px solid white;
-        background-color: rgb(0, 106, 254) !important;
+        background-color: rgb(31, 31, 39) !important;
         font-weight: 600;
     }
     
@@ -61,7 +61,7 @@
     
     .recebe::-webkit-scrollbar-thumb {
         height: 3px;
-        background-color: rgb(71, 144, 252);
+        background-color: rgb(129, 82, 205) !important;
     }
     
     .shif {
@@ -70,13 +70,13 @@
         cursor: pointer;
         font-family: 'Courier New', Courier, monospace;
         z-index: 2;
-        width: 300px;
+        width: 300px !important;
         position: absolute;
         bottom: 0;
         left: 0px;
         color: white;
         margin-left: 2%;
-        background-color: rgb(0, 106, 254) !important;
+        background-color: rgb(31, 31, 39) !important;
         font-size: 20px;
         text-align: center;
         outline: none;
@@ -87,16 +87,17 @@
     
     #selecione {
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
         cursor: pointer;
         font-family: 'Courier New', Courier, monospace;
         z-index: 2;
+        width: auto !important;
         position: absolute;
         top: 50px;
-        left: 0px;
+        left: 10px;
         color: white;
         margin-left: 2%;
-        background-color: rgb(0, 106, 254) !important;
+        background-color: rgb(31, 31, 39) !important;
         font-size: 16px;
         text-align: center;
         outline: none;
@@ -120,7 +121,7 @@
     
     body .MicrosoftMap .dirWp input {
         left: 50px !important;
-        background-color: rgb(0, 106, 254) !important;
+        background-color: rgb(31, 31, 39) !important;
         color: white !important;
         font-size: 100%;
         border: none !important;
@@ -136,7 +137,14 @@
     
     .directionsPanel {
         background-color: white;
-        width: 100%;
+        width: 100% !important;
+        overflow: hidden !important;
+        background-color: rgb(31, 31, 39) !important;
+    }
+    
+    .MicrosoftMap .deleteButton {
+        background-size: 15px !important;
+        margin-left: 8px !important;
     }
     
     .bm_draggableDisplay {
@@ -147,28 +155,28 @@
     /* div left */
     
     .directionsContainer {
-        background-color: rgb(0, 106, 254) !important;
+        background-color: rgb(36, 40, 51) !important;
     }
     /* Botão Roteirizar */
     
     a.dirBtnGo {
-        background-color: rgb(55, 185, 255) !important;
+        background-color: rgb(129, 82, 205) !important;
     }
     /* .MicrosoftMap .directionsPanel a:hover {
     color: white !important;
 } */
-    
+    /*  
     .MicrosoftMap .drTimeGo>div>div:last-child,
     .drawingBar {
-        background-color: rgb(0, 106, 254) !important;
-    }
+        background-color: rgb(31, 31, 39) !important;
+    } */
     
     .MicrosoftMap .directionsInput {
-        background-color: rgb(0, 106, 254) !important;
+        background-color: rgb(36, 40, 51) !important;
     }
     
     .MicrosoftMap .searchboxWithAS:hover {
-        background-color: rgb(0, 106, 254) !important;
+        background-color: rgb(31, 31, 39) !important;
         visibility: visible;
     }
     
@@ -177,7 +185,7 @@
     table,
     .MicrosoftMap .drTitle.selected .drTitleRow td.drDuration,
     .MicrosoftMap .drDuration {
-        background-color: rgb(0, 106, 254) !important;
+        background-color: rgb(31, 31, 39) !important;
         color: white !important;
     }
     /* Desenho */
@@ -205,6 +213,15 @@
         text-align: center;
     }
     
+    .fa,
+    .fab,
+    .fad,
+    .fal,
+    .far,
+    .fas {
+        color: rgb(129, 82, 205) !important;
+    }
+    
     #searchBoxContainer #searchBox {
         font-size: 33px;
         text-align: center;
@@ -216,7 +233,7 @@
     /* Menu Andar Carro Trem */
     
     .MicrosoftMap .dirOptsPopup {
-        background-color: rgb(0, 106, 254) !important;
+        background-color: rgb(31, 31, 39) !important;
         color: white !important;
     }
     
