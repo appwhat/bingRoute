@@ -1,12 +1,68 @@
 var map, infobox, dataLayer, directionsManager;
-
-
+/* 
+var midnightCommander = {
+    "version": "1.0",
+    "settings": {
+        "landColor": "#0B334D"
+    },
+    "elements": {
+        "mapElement": {
+            "labelColor": "#FFFFFF",
+            "labelOutlineColor": "#000000"
+        },
+        "political": {
+            "borderStrokeColor": "#144B53",
+            "borderOutlineColor": "#00000000"
+        },
+        "point": {
+            "iconColor": "#0C4152",
+            "fillColor": "#f0f0f0",
+            "strokeColor": "#0C4152"
+        },
+        "transportation": {
+            "strokeColor": "#f0f0f0",
+            "fillColor": "#f0f0f0"
+        },
+        "highway": {
+            "strokeColor": "#158399",
+            "fillColor": "#f0f0f0"
+        },
+        "controlledAccessHighway": {
+            "strokeColor": "#158399",
+            "fillColor": "#f0f0f0"
+        },
+        "arterialRoad": {
+            "strokeColor": "#157399",
+            "fillColor": "#f0f0f0"
+        },
+        "majorRoad": {
+            "strokeColor": "#157399",
+            "fillColor": "#f0f0f0"
+        },
+        "railway": {
+            "strokeColor": "#146474",
+            "fillColor": "#f0f0f0"
+        },
+        "structure": {
+            "fillColor": "#115166"
+        },
+        "water": {
+            "fillColor": "#021019"
+        },
+        "area": {
+            "fillColor": "#115166"
+        }
+    }
+}; */
 var sdsDataSourceUrl = 'https://spatial.virtualearth.net/REST/v1/data/f42cab32d0ee41738d90856badd638d3/USCensus2010_ZCTA5/ZCTA5';
+
+
 
 function GetMap() {
     map = new Microsoft.Maps.Map('#myMap', {
         center: new Microsoft.Maps.Location(-23.2885949, -46.8365055),
         zoom: 9,
+        /* customMapStyle: midnightCommander */
         /* mapTypeId: Microsoft.Maps.MapTypeId.canvasDark, */
     });
 
@@ -51,7 +107,13 @@ function GetMap() {
     Microsoft.Maps.loadModule('Microsoft.Maps.SpatialMath', function() {
         // Get locations of a regular hexagon, 5 miles from each vertex the map center
         var morumbi = Microsoft.Maps.SpatialMath.getRegularPolygon(new Microsoft.Maps.Location(-23.5863118, -46.7237101), 6, 100, Microsoft.Maps.SpatialMath.DistanceUnits.Miles);
-        var zonaMorumbi = new Microsoft.Maps.Polygon(morumbi, { fillColor: 'rgba(255,250,10 , 0.1)', strokeColor: 'rgba(200,0,10 , 0.5)' });
+        var zonaMorumbi = new Microsoft.Maps.Polygon(morumbi, { fillColor: 'rgba(0,148,210, 0.2)', strokeColor: 'rgba(0,148,210 0.2)' });
+        map.entities.push(zonaMorumbi);
+    });
+    Microsoft.Maps.loadModule('Microsoft.Maps.SpatialMath', function() {
+        // Get locations of a regular hexagon, 5 miles from each vertex the map center
+        var morumbi5 = Microsoft.Maps.SpatialMath.getRegularPolygon(new Microsoft.Maps.Location(-23.5863118, -46.7237101), 3, 100, Microsoft.Maps.SpatialMath.DistanceUnits.Miles);
+        var zonaMorumbi = new Microsoft.Maps.Polygon(morumbi5, { fillColor: 'rgba(0,0,210, 0.0)', strokeColor: 'rgba(0,148,210 0.0)' });
         map.entities.push(zonaMorumbi);
     });
     /* Campinas */
@@ -59,7 +121,7 @@ function GetMap() {
     Microsoft.Maps.loadModule('Microsoft.Maps.SpatialMath', function() {
         // Get locations of a regular hexagon, 5 miles from each vertex the map center
         var campinas = Microsoft.Maps.SpatialMath.getRegularPolygon(new Microsoft.Maps.Location(-22.8608181, -47.0237889), 6, 100, Microsoft.Maps.SpatialMath.DistanceUnits.Miles);
-        var zonaCampinas = new Microsoft.Maps.Polygon(campinas, { fillColor: 'rgba(255,10,10 , 0.1)', strokeColor: 'rgba(200,0,10 , 0.5)' });
+        var zonaCampinas = new Microsoft.Maps.Polygon(campinas, { fillColor: 'rgba(0,148,210, 0.2)', strokeColor: 'rgba(0,148,210 0.2)' });
         map.entities.push(zonaCampinas);
 
     });
@@ -69,15 +131,15 @@ function GetMap() {
     Microsoft.Maps.loadModule('Microsoft.Maps.SpatialMath', function() {
         // Get locations of a regular hexagon, 5 miles from each vertex the map center
         var tamboré = Microsoft.Maps.SpatialMath.getRegularPolygon(new Microsoft.Maps.Location(-23.5009333, -46.8388595), 6, 100, Microsoft.Maps.SpatialMath.DistanceUnits.Miles);
-        var zonaTamboré = new Microsoft.Maps.Polygon(tamboré, { fillColor: 'rgba(255,10,250 , 0.1)', strokeColor: 'rgba(200,0,10 , 0.5)' });
+        var zonaTamboré = new Microsoft.Maps.Polygon(tamboré, { fillColor: 'rgba(0,148,210, 0.2)', strokeColor: 'rgba(0,148,210 0.2)' });
         map.entities.push(zonaTamboré);
 
     }); /*  */
-       /*BIG Tamboré */
+    /*BIG Tamboré */
     Microsoft.Maps.loadModule('Microsoft.Maps.SpatialMath', function() {
         // Get locations of a regular hexagon, 5 miles from each vertex the map center
         var bigTamboré = Microsoft.Maps.SpatialMath.getRegularPolygon(new Microsoft.Maps.Location(-23.50098992879626, -46.836054831837195), 6, 100, Microsoft.Maps.SpatialMath.DistanceUnits.Miles);
-        var zonabigTamboré = new Microsoft.Maps.Polygon(bigTamboré, { fillColor: 'rgba(100,100,100 , 0.1)', strokeColor: 'rgba(200,0,10 , 0.5)' });
+        var zonabigTamboré = new Microsoft.Maps.Polygon(bigTamboré, { fillColor: 'rgba(0,148,210, 0.2)', strokeColor: 'rgba(0,148,210 0.2)' });
         map.entities.push(zonabigTamboré);
 
     }); /*  */
@@ -85,18 +147,18 @@ function GetMap() {
     Microsoft.Maps.loadModule('Microsoft.Maps.SpatialMath', function() {
         // Get locations of a regular hexagon, 5 miles from each vertex the map center
         var saojrp = Microsoft.Maps.SpatialMath.getRegularPolygon(new Microsoft.Maps.Location(-20.8250415, -49.3870208), 6, 100, Microsoft.Maps.SpatialMath.DistanceUnits.Miles);
-        var zonaSaojrp = new Microsoft.Maps.Polygon(saojrp, { fillColor: 'rgba(0,0,250 , 0.1)', strokeColor: 'rgba(200,0,10 , 0.5)' });
+        var zonaSaojrp = new Microsoft.Maps.Polygon(saojrp, { fillColor: 'rgba(0,148,210, 0.2)', strokeColor: 'rgba(0,148,210 0.2)' });
         map.entities.push(zonaSaojrp);
 
     }); /*  */
 
-    
-    
+
+
     var pinMorumbi = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.5863118, -46.7237101), {
         icon: 'https://static0.tiendeo.com.br/upload_negocio/negocio_21/logo2.png',
         anchor: new Microsoft.Maps.Point(30, 40)
     });
-    /* https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png */
+    /* https://img.icons8.com/fluency/32/000000/driver.png */
 
     var pinCampinas = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-22.8608181, -47.0237889), {
         icon: 'https://static0.tiendeo.com.br/upload_negocio/negocio_21/logo2.png',
@@ -125,70 +187,70 @@ function GetMap() {
     map.entities.push(pinCampinas);
     map.entities.push(pinTambore);
     map.entities.push(pinSJRP);
-/* Centralizar */
-    Microsoft.Maps.Events.addHandler(pinBigTambore, 'click', function (args) { map.setView({ center: args.target.getLocation(), zoom: 13 }); });
-    Microsoft.Maps.Events.addHandler(pinMorumbi, 'click', function (args) { map.setView({ center: args.target.getLocation(), zoom: 13 }); });
-    Microsoft.Maps.Events.addHandler(pinCampinas, 'click', function (args) { map.setView({ center: args.target.getLocation(), zoom: 13 }); });
-    Microsoft.Maps.Events.addHandler(pinTambore, 'click', function (args) { map.setView({ center: args.target.getLocation(), zoom: 13 }); });
-    Microsoft.Maps.Events.addHandler(pinSJRP, 'click', function (args) { map.setView({ center: args.target.getLocation(), zoom: 13 }); });
+    /* Centralizar */
+    Microsoft.Maps.Events.addHandler(pinBigTambore, 'click', function(args) { map.setView({ center: args.target.getLocation(), zoom: 13 }); });
+    Microsoft.Maps.Events.addHandler(pinMorumbi, 'click', function(args) { map.setView({ center: args.target.getLocation(), zoom: 13 }); });
+    Microsoft.Maps.Events.addHandler(pinCampinas, 'click', function(args) { map.setView({ center: args.target.getLocation(), zoom: 13 }); });
+    Microsoft.Maps.Events.addHandler(pinTambore, 'click', function(args) { map.setView({ center: args.target.getLocation(), zoom: 13 }); });
+    Microsoft.Maps.Events.addHandler(pinSJRP, 'click', function(args) { map.setView({ center: args.target.getLocation(), zoom: 13 }); });
 
-//Posto
-var PostoOsasco = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.50564480864178, -46.788773337021965), {
-    icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/gasstation_4334%20(1).png",
-    anchor: new Microsoft.Maps.Point(50, 40),
-    title: "Posto Osasco"
-});
+    //Posto
+    var PostoOsasco = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.50564480864178, -46.788773337021965), {
+        icon: "https://img.icons8.com/fluency/48/000000/gas-pump.png",
+        anchor: new Microsoft.Maps.Point(50, 40),
+        title: "Posto Osasco"
+    });
 
-var PostoMorumbi = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.587883074040803, -46.723281091118295), {
-    icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/gasstation_4334%20(1).png",
-    anchor: new Microsoft.Maps.Point(50, 40),
-    title: "Posto Morumbi"
-});
+    var PostoMorumbi = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.587883074040803, -46.723281091118295), {
+        icon: "https://img.icons8.com/fluency/48/000000/gas-pump.png",
+        anchor: new Microsoft.Maps.Point(50, 40),
+        title: "Posto Morumbi"
+    });
 
-map.entities.push(PostoOsasco);
-map.entities.push(PostoMorumbi);
+    map.entities.push(PostoOsasco);
+    map.entities.push(PostoMorumbi);
 
 
-    var igor = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.64738054016382, -46.72211961974586), { title: 'Igor José Gomes de Barros Macedo DZZ2F46', color: 'black', icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
+    var igor = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.64738054016382, -46.72211961974586), { title: 'Igor José Gomes de Barros Macedo DZZ2F46', color: 'black', icon: "https://img.icons8.com/fluency/32/000000/driver.png" });
 
-    //var JhonatasMorumbi = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.770671548686664, -46.715081647170436), { title: 'Jhonatas Fernandes FHN6709', color: 'black', icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
-    //var JonnyMorumbi = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.622915137929112, -46.80977578765919), { title: 'Johnny dos Santos EUF2D36', color: 'black', icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
-    var leandro = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.6962183, -46.8001089), { title: 'Leandro da Silva Gadelha EBN3A31', color: 'black', icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
-    var waltecir = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.7934763, -46.7358249), { title: 'Waltecir da Silva EDT1660', color: 'black', icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
-    //var leandroNovato = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.6212564, -46.8012588), { title: 'Leandro Souza Batista IWX7705', color: 'black', icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
-    var giovanni = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.6228847, -46.7851234), { title: "Giovani de Oliveira FLN4J40", color: 'black', icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
-    var julio = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.6624916, -46.8192952), { title: "Julio Cesar Campanha OMA2349", color: 'black', icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
-    var Renan = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.553963566459668, -46.531135976833674), { title: "Renan Molina Ruz Baldi FGE8113", color: 'black', icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
-    var Hernani = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.582733861613768, -46.72849980441773), { title: 'hernani artogi  FGE8113', color: "blue", icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
+    //var JhonatasMorumbi = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.770671548686664, -46.715081647170436), { title: 'Jhonatas Fernandes FHN6709', color: 'black', icon: "https://img.icons8.com/fluency/32/000000/driver.png" });
+    //var JonnyMorumbi = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.622915137929112, -46.80977578765919), { title: 'Johnny dos Santos EUF2D36', color: 'black', icon: "https://img.icons8.com/fluency/32/000000/driver.png" });
+    var leandro = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.6962183, -46.8001089), { title: 'Leandro da Silva Gadelha EBN3A31', color: 'black', icon: "https://img.icons8.com/fluency/32/000000/driver.png" });
+    var waltecir = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.7934763, -46.7358249), { title: 'Waltecir da Silva EDT1660', color: 'black', icon: "https://img.icons8.com/fluency/32/000000/driver.png" });
+    //var leandroNovato = new Microsoft.Maps.Pushpin(newdsd Microsoft.Maps.Location(-23.6212564, -46.8012588), { title: 'Leandro Souza Batista IWX7705', color: 'black', icon: "https://img.icons8.com/fluency/32/000000/driver.png" });
+    var giovanni = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.6228847, -46.7851234), { title: "Giovani de Oliveira FLN4J40", color: 'black', icon: "https://img.icons8.com/fluency/32/000000/driver.png" });
+    var julio = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.6624916, -46.8192952), { title: "Julio Cesar Campanha OMA2349", color: 'black', icon: "https://img.icons8.com/fluency/32/000000/driver.png" });
+    var Renan = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.553963566459668, -46.531135976833674), { title: "Renan Molina Ruz Baldi FGE8113", color: 'black', icon: "https://img.icons8.com/fluency/32/000000/driver.png" });
+    var Hernani = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.582733861613768, -46.72849980441773), { title: 'hernani artogi  FGE8113', color: "blue", icon: "https://img.icons8.com/fluency/32/000000/driver.png" });
 
     //Tambore
 
-    var JeffersonAkiraTamboré = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.531898189352848, -46.86100226067139), { title: 'Jefferson Akira Mizusaki LKV8459', color: "blue", icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
+    var JeffersonAkiraTamboré = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.531898189352848, -46.86100226067139), { title: 'Jefferson Akira Mizusaki LKV8459', color: "blue", icon: "https://img.icons8.com/fluency/32/000000/driver.png" });
     //Verificar o endereço do Carlos    
-    var carlosTambore = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.532811112543776, -46.80360364717909), { title: 'Carlos Alberto Assis de Oliveira KNM5791', color: "blue", icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
-    var FernandoTambore = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.403597546910227, -46.74366104749553), { title: 'Fernando Arruda EIH2018', color: "blue", icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
-    var joseTambore = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.52269463361998, -46.711636336628345), { title: 'Jose de Farias Silva CVT8670', color: "blue", icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
-    var MayconTambore = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.49635965799176, -46.80293806536161), { title: 'Maycon Erickson dos Santos DEN9H93', color: "blue", icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
-    var DanielTambore = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.54718826039277, -46.85750743207862), { title: 'Daniel Araujo de lima LKV8459', color: "blue", icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
-    var OrlandoTambore = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.489180953309173, -46.79066493176556), { title: 'Orlando Lemes DZB0993', color: "blue", icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
-    var WesleyTambore = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.548306638271093, -46.83524651582318), { title: 'Wesley Souza Santos DEE9135', color: "blue", icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
-    var EdvalTambore = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.51104904468552, -46.785195060775266), { title: 'Edval Custódio João de Souza GEU1684', color: "blue", icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
-    var ManoelTambore = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.425619157731724, -46.84948264686319), { title: 'Manoel Charles dos Santos EPH8J72', color: "blue", icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
+    var carlosTambore = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.532811112543776, -46.80360364717909), { title: 'Carlos Alberto Assis de Oliveira KNM5791', color: "blue", icon: "https://img.icons8.com/fluency/32/000000/driver.png" });
+    var FernandoTambore = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.403597546910227, -46.74366104749553), { title: 'Fernando Arruda EIH2018', color: "blue", icon: "https://img.icons8.com/fluency/32/000000/driver.png" });
+    var joseTambore = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.52269463361998, -46.711636336628345), { title: 'Jose de Farias Silva CVT8670', color: "blue", icon: "https://img.icons8.com/fluency/32/000000/driver.png" });
+    var MayconTambore = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.49635965799176, -46.80293806536161), { title: 'Maycon Erickson dos Santos DEN9H93', color: "blue", icon: "https://img.icons8.com/fluency/32/000000/driver.png" });
+    var DanielTambore = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.54718826039277, -46.85750743207862), { title: 'Daniel Araujo de lima LKV8459', color: "blue", icon: "https://img.icons8.com/fluency/32/000000/driver.png" });
+    var OrlandoTambore = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.489180953309173, -46.79066493176556), { title: 'Orlando Lemes DZB0993', color: "blue", icon: "https://img.icons8.com/fluency/32/000000/driver.png" });
+    var WesleyTambore = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.548306638271093, -46.83524651582318), { title: 'Wesley Souza Santos DEE9135', color: "blue", icon: "https://img.icons8.com/fluency/32/000000/driver.png" });
+    var EdvalTambore = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.51104904468552, -46.785195060775266), { title: 'Edval Custódio João de Souza GEU1684', color: "blue", icon: "https://img.icons8.com/fluency/32/000000/driver.png" });
+    var ManoelTambore = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-23.425619157731724, -46.84948264686319), { title: 'Manoel Charles dos Santos EPH8J72', color: "blue", icon: "https://img.icons8.com/fluency/32/000000/driver.png" });
 
     //CAMPINAS
-    var flavioHenrique = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-22.898812371440197, -47.02625422627076), { title: 'Flavio Henrique Batista FQR2J28', color: "red", icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
-    var alimateia = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-22.934970393931067, -47.12454670443228), { title: 'Alimateia Teixeira dos Santos BWQ5F02', color: "red", icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
-    var MarcoAntonio = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-22.8815922, -47.0400661), { title: 'Marco Antonio Ribeiro QNB4C23', color: "red", icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
-    var AntonioValter = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-22.862145, -47.0572087), { title: 'Antonio Valter Fávero FDV5443', color: "red", icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
-    var joseCarlos = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-22.8644, -47.0676004), { title: 'José carlos Butin FZU4H56', color: "red", icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
+    var Marcus = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-22.91531779914263, -47.077845232656465), { title: 'Marcus Vinicius de Carvalho EYT7A50', color: "red", icon: "https://img.icons8.com/fluency/32/000000/driver.png" });
+    var alimateia = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-22.934970393931067, -47.12454670443228), { title: 'Alimateia Teixeira dos Santos BWQ5F02', color: "red", icon: "https://img.icons8.com/fluency/32/000000/driver.png" });
+    var MarcoAntonio = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-22.8815922, -47.0400661), { title: 'Marco Antonio Ribeiro QNB4C23', color: "red", icon: "https://img.icons8.com/fluency/32/000000/driver.png" });
+    var AntonioValter = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-22.862145, -47.0572087), { title: 'Antonio Valter Fávero FDV5443', color: "red", icon: "https://img.icons8.com/fluency/32/000000/driver.png" });
+    var joseCarlos = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-22.8644, -47.0676004), { title: 'José carlos Butin FZU4H56', color: "red", icon: "https://img.icons8.com/fluency/32/000000/driver.png" });
 
     //SJRP
-    var LeandroSJRP = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-20.81478422884874, -49.48804826144113), { title: 'Leandro Santana Oliveira DNK9I59', color: "red", icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
-    var ThiagoSJRP = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-20.754241125224006, -49.43428855902518), { title: 'Thiago Leme Siva EBP8744', color: "red", icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
-    var EdersonSJRP = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-20.8387998301064, -49.37501794724071), { title: 'Ederson Cristiano Pereira dos Santos	ERD5I01', color: "black", icon: "https://raw.githubusercontent.com/appwhat/bingRoute/main/motors/m3.png" });
+    var LeandroSJRP = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-20.81478422884874, -49.48804826144113), { title: 'Leandro Santana Oliveira DNK9I59', color: "red", icon: "https://img.icons8.com/fluency/32/000000/driver.png" });
+    var ThiagoSJRP = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-20.754241125224006, -49.43428855902518), { title: 'Thiago Leme Siva EBP8744', color: "red", icon: "https://img.icons8.com/fluency/32/000000/driver.png" });
+    var EdersonSJRP = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-20.8387998301064, -49.37501794724071), { title: 'Ederson Cristiano Pereira dos Santos	ERD5I01', color: "black", icon: "https://img.icons8.com/fluency/32/000000/driver.png" });
 
     map.entities.push(igor);
-        map.entities.push(Hernani);
+    map.entities.push(Hernani);
 
     map.entities.push(carlosTambore);
     map.entities.push(ManoelTambore);
@@ -214,7 +276,7 @@ map.entities.push(PostoMorumbi);
     map.entities.push(ThiagoSJRP)
     map.entities.push(EdersonSJRP)
 
-    map.entities.push(flavioHenrique);
+    map.entities.push(Marcus);
     map.entities.push(alimateia);
     map.entities.push(MarcoAntonio);
     map.entities.push(AntonioValter);
@@ -240,6 +302,7 @@ map.entities.push(PostoMorumbi);
     //Assign the infobox to a map instance.
     infobox.setMap(map);
 
+
     //Load the directions and spatial data service modules.
     Microsoft.Maps.loadModule(['Microsoft.Maps.Directions', 'Microsoft.Maps.SpatialDataService'], function() {
         //Create an instance of the directions manager.
@@ -247,7 +310,14 @@ map.entities.push(PostoMorumbi);
 
         //Specify where to display the route instructions.
         directionsManager.setRenderOptions({
-            itineraryContainer: '#directionsItinerary'
+            itineraryContainer: '#directionsItinerary',
+            drivingPolylineOptions: {
+                strokeColor: '#032f44',
+                strokeThickness: 6
+            },
+            waypointPushpinOptions: {
+                title: ''
+            }
         });
 
         //Specify the where to display the input panel
@@ -275,6 +345,47 @@ map.entities.push(PostoMorumbi);
 }
 
 function directionsUpdated(e) {
+
+    /* Função KMs */
+
+    var routeIdx = directionsManager.getRequestOptions().routeIndex;
+
+    //Get the distance of the route, rounded to 2 decimal places.
+    var distance = Math.round(e.routeSummary[routeIdx].distance * 100) / 100;
+
+    //Get the distance units used to calculate the route.
+    var units = directionsManager.getRequestOptions().distanceUnit;
+    var distanceUnits = '';
+
+    if (units == Microsoft.Maps.Directions.DistanceUnit.km) {
+        distanceUnits = 'km'
+    } else {
+        //Must be in miles
+        distanceUnits = 'miles'
+    }
+
+    //Time is in seconds, convert to minutes and round off.
+    var time = Math.round(e.routeSummary[routeIdx].timeWithTraffic / 60);
+
+
+    /*     console.log(e.routeSummary[0].distance) Verificar os Kms
+     */
+    if (distance > 30) {
+        document.getElementById('routeInfoPanel').innerHTML = `Rota: Dificil`
+
+        /*         document.getElementById('routeInfoPanel').innerHTML = `Rota: Dificil <br/> Distancia: ${distance}  ${distanceUnits} - Tempo: ${time} minutos;`
+         */
+    } else if (distance > 20 && distance < 30) {
+        document.getElementById('routeInfoPanel').innerHTML = `Rota: Média`
+
+        /*         document.getElementById('routeInfoPanel').innerHTML = `Rota: Média <br/> Distancia: ${distance}  ${distanceUnits} - Tempo: ${time} minutos;`
+         */
+    } else {
+        document.getElementById('routeInfoPanel').innerHTML = `Rota: Facil`
+
+        /*         document.getElementById('routeInfoPanel').innerHTML = `Rota: Facil <br/> Distancia: ${distance}  ${distanceUnits} - Tempo: ${time} minutos;`
+         */
+    }
     /*console.log(e)
       var alertRota = document.querySelector('#alertRota')
 
@@ -328,6 +439,10 @@ function directionsUpdated(e) {
         dataLayer.add(data);
 
     });
+
+
+
+
 }
 
 function getRouteMode(routeRequest) {
