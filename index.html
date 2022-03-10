@@ -12,6 +12,7 @@
     <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=ApoWpTarg42VVWj1C5as0XtHsuo1bgURsNGSjh_htuhebgGRFcKC1QkF_kwDDXfi' async defer></script>
 </head>
 
+
 <body>
 
 
@@ -31,6 +32,7 @@
     <div id="myMap"></div>
 
 
+    </div>
     <div class="shif">
         <div>
             <i title="Control + Delete" id="btnDeletar" title="Limpar Campos" class="fas fa-trash icon"></i>
@@ -44,7 +46,7 @@
             <i class="fas fa-moon icon" onclick="map.setView({mapTypeId:Microsoft.Maps.MapTypeId.canvasLight});"> </i>
             <i class="fas fa-plus icon" id="btnInserir" title="Control + Enter"> </i>
             <i class="fas fa-search icon" id="btnSearch" title="Shift + 'S'"> </i>
-            <a href="https://www.google.com.br/maps" target="_blank" rel="noopener noreferrer"><i class="fas fa-map icon" id="" title="Abrir Mapa"></i></a> 
+            <a href="https://www.google.com.br/maps" target="_blank" rel="noopener noreferrer"><i class="fas fa-map icon" id="" title="Abrir Mapa"></i></a>
 
         </div>
     </div>
@@ -56,6 +58,7 @@
     <option value="-23.501128906451363, -46.83603771803761">BIG Tamboré</option>
     </select>
 
+    <div id='routeInfoPanel' style="position: fixed !important; left: 590px !important; top: 0px!important; z-index: 2000 !important; font-size: 20px;  padding: 4px; color: black;"></div>
 
     <script src="script.js"></script>
     <script src="myScript.js"></script>
