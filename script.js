@@ -311,13 +311,7 @@ function GetMap() {
         //Specify where to display the route instructions.
         directionsManager.setRenderOptions({
             itineraryContainer: '#directionsItinerary',
-            drivingPolylineOptions: {
-                strokeColor: '#032f44',
-                strokeThickness: 6
-            },
-            waypointPushpinOptions: {
-                title: ''
-            }
+            
         });
 
         //Specify the where to display the input panel
