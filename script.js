@@ -247,7 +247,7 @@ function GetMap() {
     //SJRP
     var LeandroSJRP = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-20.81478422884874, -49.48804826144113), { title: 'Leandro Santana Oliveira DNK9I59', color: "red", icon: "https://img.icons8.com/fluency/32/000000/driver.png" });
     var ThiagoSJRP = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-20.754241125224006, -49.43428855902518), { title: 'Thiago Leme Siva EBP8744', color: "red", icon: "https://img.icons8.com/fluency/32/000000/driver.png" });
-    var EdersonSJRP = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-20.8387998301064, -49.37501794724071), { title: 'Ederson Cristiano Pereira dos Santos	ERD5I01', color: "black", icon: "https://img.icons8.com/fluency/32/000000/driver.png" });
+    var Agnaldo = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-20.776861763470453, -49.359622190296285), { title: 'Agnaldo Cesar Machado EJW9635', color: "black", icon: "https://img.icons8.com/fluency/32/000000/driver.png" });
 
     map.entities.push(igor);
     map.entities.push(Hernani);
@@ -274,7 +274,7 @@ function GetMap() {
 
     map.entities.push(LeandroSJRP)
     map.entities.push(ThiagoSJRP)
-    map.entities.push(EdersonSJRP)
+    map.entities.push(Agnaldo)
 
     map.entities.push(Marcus);
     map.entities.push(alimateia);
