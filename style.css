@@ -159,7 +159,7 @@
     /* div left */
     
     .directionsContainer {
-        background-color: #015958!important;
+        background-color: #015958 !important;
     }
     /* Botão Roteirizar */
     
@@ -176,7 +176,7 @@
     } */
     
     .MicrosoftMap .directionsInput {
-        background-color: #015958!important;
+        background-color: #015958 !important;
     }
     
     .MicrosoftMap .searchboxWithAS:hover {
@@ -323,4 +323,20 @@
     
      ::-ms-tooltip {
         display: none;
+    }
+    /* KMS DE ROTA */
+    
+    #routeInfoPanel {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        text-align: center;
+        width: 200px !important;
+        background-color: #015958;
+        color: white !important;
+        position: fixed !important;
+        left: 380px !important;
+        bottom: 0px !important;
+        z-index: 2000 !important;
+        font-size: 20px;
+        padding: 4px;
+        color: black;
     }
