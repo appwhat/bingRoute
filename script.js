@@ -311,7 +311,7 @@ function GetMap() {
         //Specify where to display the route instructions.
         directionsManager.setRenderOptions({
             itineraryContainer: '#directionsItinerary',
-            
+
         });
 
         //Specify the where to display the input panel
@@ -512,15 +512,25 @@ var btnDeletar = document.getElementById('btnDeletar')
 var btnOk = document.getElementById('btnOk')
 var btnMostrar = document.getElementById('btnMostrar')
 var btnSearch = document.getElementById('btnSearch')
+const valorTrans = document.getElementById('controle')
+
 
 function mostarOcultar() {
     if (caixaText.style.display == "none") {
         caixaText.style.display = "block"
+        valorTrans.style.display = "block";
         caixaText.focus()
     } else {
         caixaText.style.display = "none"
+        valorTrans.style.display = "none";
     }
 }
+valorTrans.addEventListener('change', () => {
+    if (valorTrans.value > 9) {
+        document.getElementById('caixaText').style.background = `rgba(2, 53, 53, ${valorTrans.value})`
+    }
+    document.getElementById('caixaText').style.background = `rgba(2, 53, 53, 0.${valorTrans.value})`
+})
 
 function mostarOcultarSearch() {
     if (searchBoxContainer.style.display == "none") {
