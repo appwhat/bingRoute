@@ -31,8 +31,13 @@
         text-align: start;
         outline: none;
         border: 1px solid white;
-        background-color: rgb(31, 31, 39) !important;
+        background-color: #023535be !important;
         font-weight: 600;
+    }
+    /* Desenho */
+    
+    .MicrosoftMap .drawingBar .action a {
+        background-color: #023535 !important;
     }
     
     i.icon {
@@ -76,7 +81,7 @@
         left: 0px;
         color: white;
         margin-left: 2%;
-        background-color: rgb(31, 31, 39) !important;
+        background-color: #023535 !important;
         font-size: 20px;
         text-align: center;
         outline: none;
@@ -97,7 +102,7 @@
         left: 10px;
         color: white;
         margin-left: 2%;
-        background-color: rgb(31, 31, 39) !important;
+        background-color: #023535 !important;
         font-size: 16px;
         text-align: center;
         outline: none;
@@ -121,7 +126,7 @@
     
     body .MicrosoftMap .dirWp input {
         left: 50px !important;
-        background-color: rgb(31, 31, 39) !important;
+        background-color: #023535 !important;
         color: white !important;
         font-size: 100%;
         border: none !important;
@@ -139,7 +144,7 @@
         background-color: white;
         width: 100% !important;
         overflow: hidden !important;
-        background-color: rgb(31, 31, 39) !important;
+        background-color: #023535 !important;
     }
     
     .MicrosoftMap .deleteButton {
@@ -155,12 +160,12 @@
     /* div left */
     
     .directionsContainer {
-        background-color: rgb(36, 40, 51) !important;
+        background-color: #015958!important;
     }
     /* Botão Roteirizar */
     
     a.dirBtnGo {
-        background-color: rgb(129, 82, 205) !important;
+        background-color: #0FC2C0 !important;
     }
     /* .MicrosoftMap .directionsPanel a:hover {
     color: white !important;
@@ -168,15 +173,15 @@
     /*  
     .MicrosoftMap .drTimeGo>div>div:last-child,
     .drawingBar {
-        background-color: rgb(31, 31, 39) !important;
+        background-color: #023535 !important;
     } */
     
     .MicrosoftMap .directionsInput {
-        background-color: rgb(36, 40, 51) !important;
+        background-color: #015958!important;
     }
     
     .MicrosoftMap .searchboxWithAS:hover {
-        background-color: rgb(31, 31, 39) !important;
+        background-color: #023535 !important;
         visibility: visible;
     }
     
@@ -185,7 +190,7 @@
     table,
     .MicrosoftMap .drTitle.selected .drTitleRow td.drDuration,
     .MicrosoftMap .drDuration {
-        background-color: rgb(31, 31, 39) !important;
+        background-color: #023535 !important;
         color: white !important;
     }
     /* Desenho */
@@ -219,7 +224,7 @@
     .fal,
     .far,
     .fas {
-        color: rgb(129, 82, 205) !important;
+        color: #0FC2C0 !important;
     }
     
     #searchBoxContainer #searchBox {
@@ -233,7 +238,7 @@
     /* Menu Andar Carro Trem */
     
     .MicrosoftMap .dirOptsPopup {
-        background-color: rgb(31, 31, 39) !important;
+        background-color: #023535 !important;
         color: white !important;
     }
     
