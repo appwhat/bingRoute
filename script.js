@@ -526,10 +526,12 @@ function mostarOcultar() {
     }
 }
 valorTrans.addEventListener('change', () => {
-    if (valorTrans.value > 9) {
-        document.getElementById('caixaText').style.background = `rgba(2, 53, 53, ${valorTrans.value})`
+    if (valorTrans.value == 10) {
+        document.getElementById('caixaText').style.background = `rgb(2, 53, 53)`
+        console.log(caixaText.style.background);
+    } else {
+        document.getElementById('caixaText').style.background = `rgba(2, 53, 53, 0.${valorTrans.value})`
     }
-    document.getElementById('caixaText').style.background = `rgba(2, 53, 53, 0.${valorTrans.value})`
 })
 
 function mostarOcultarSearch() {
