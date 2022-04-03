@@ -31,7 +31,7 @@
         text-align: start;
         outline: none;
         border: 1px solid white;
-        background-color: #023535be !important;
+        background-color: rgba(2, 53, 53, 1);
         font-weight: 600;
     }
     /* Desenho */
