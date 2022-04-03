@@ -525,6 +525,7 @@ function mostarOcultar() {
         valorTrans.style.display = "none";
     }
 }
+/* valorTrans.onmousemove */
 valorTrans.addEventListener('mousemove', () => {
     if (valorTrans.value == 10) {
         document.getElementById('caixaText').style.background = `rgb(2, 53, 53)`
